@@ -14,8 +14,8 @@
 # /index.php
 # /license.txt
 # /readme.html
-/wp-*.php
-/xmlrpc.php
+# /wp-*.php
+# /xmlrpc.php
 
 # Configuration
 # wp-config.php
@@ -27,7 +27,7 @@
 *.log
 
 # htaccess
-/.htaccess
+# /.htaccess
 
 # All plugins
 #
