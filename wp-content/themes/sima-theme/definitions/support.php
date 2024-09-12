@@ -56,3 +56,20 @@ function generate_modules($modules)
         }
     }
 }
+
+/**
+ * Adding SVG support
+ */
+
+function morran_shop_svg_support( $mimes = array() ) {
+	
+	$mimes['svg']  = 'image/svg';
+	$mimes['svgz'] = 'image/svg';
+	return $mimes;
+}
+add_filter( 'upload_mimes', 'morran_shop_svg_support' ); 
+
+/**
+ * Adding Featured Image support to the theme
+ */
+add_theme_support( 'post-thumbnails' );
