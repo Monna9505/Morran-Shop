@@ -6,6 +6,7 @@ Text Domain: sima-theme
 Version: 1.0
 */
 body {
+    font-family: "Gilda Display", serif;
     margin: 0 !important;
     padding: 0 !important;
 }
