@@ -1,0 +1,102 @@
+footer {
+    padding: 35px 0;
+    background: linear-gradient(180deg, $morran-yellow, rgba(0, 0, 0, 0.70));
+    .footer__first__part {
+        align-items: start;
+        padding: 0 0 20px 0;
+        .footer__logo {
+            display: block;
+            max-width: 150px;
+            height: 100%;
+            background: $black;
+            border-radius: 3px;
+        }
+        .footer__main__links {
+            padding: 0 15px 0 0;
+            .footer_main_link {
+                margin-bottom: 20px;
+                a {
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: $white;
+                }
+            }
+        }
+        .categories__column {
+            padding: 0 15px 0 0;
+            .categories__title {
+                font-weight: 600;
+                margin-bottom: 20px;
+            }
+            .categories {
+                .category__link {
+                    margin-bottom: 20px;
+                    a {
+                        font-size: 18px;
+                        font-weight: 600;
+                        color: $white;
+                    }
+                }
+            }
+        }
+        .contacts__column {
+            padding: 0 15px 0 0;
+            .contacts__title {
+                font-weight: 600;
+                margin-bottom: 20px;
+            }
+            .contact__links {
+                .email__field,
+                .telephone__field,
+                .address__field {
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: $white;
+                    margin-bottom: 10px;
+                    a {
+                        font-size: 18px;
+                        font-weight: 600;
+                        color: $white;
+                    }
+                }
+            }
+        }
+        .social__links {
+            padding: 0 15px 0 0;
+            .social__links__text {
+                font-weight: 600;
+                margin-bottom: 20px;
+            }
+            .soc__links {
+                display: flex;
+                gap: 20px;
+                .social__media__link {
+                    i {
+                        font-size: 30px;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+    .footer__privacy__texts {
+        text-align: center;
+        border-top: 1px solid $black;
+        padding: 20px 0 0 0;
+        span {
+            color: $white;
+        }
+        .privacy__texts {
+            margin-bottom: 10px;
+            .privacy__policy {
+                color: $white;
+            }
+            .terms__and__conditions {
+                color: $white;
+            }
+        }
+        .rights__reserved__text {
+            color: $white;
+        }
+    }
+}
