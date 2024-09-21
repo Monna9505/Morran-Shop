@@ -1,0 +1,8 @@
+header {
+    box-shadow: 4px 0px 15px 0px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+    .header__wrapper {
+        background-color: $morran-yellow;
+        padding: 0 30px;
+    }
+}

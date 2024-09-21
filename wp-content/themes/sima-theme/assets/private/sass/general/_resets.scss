@@ -1,5 +1,6 @@
 .container {
-    width: 1440px;
+    max-width: 1650px;
+    margin: 0 auto;
     padding: 0 30px;
     @media screen and (max-width: breakpoints(lg)) {
         padding: 0 15px;
@@ -7,10 +8,15 @@
 }
 
 .container-fluid {
-    padding: 30px;
+    padding: 0 30px;
     @media screen and (max-width: breakpoints(lg)) {
         padding: 0 15px;
     }
+}
+
+body.blurred-body *:not(header):not(header *):not(#wpadminbar):not(#wpadminbar *) {
+    filter: blur(3px);
+    transition: filter 0.3s ease;
 }
 
 img {
@@ -97,6 +103,19 @@ p, span, li {
     }
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+p {
+    margin: 0;
+}
+
 span {
     font-weight: 700;
 }
@@ -104,8 +123,9 @@ span {
 a {
     font-size: 16px;
     line-height: 22px;
-    text-decoration: none;
     font-weight: 400;
+    text-decoration: none;
+    color: $black;
     @media screen and (max-width: breakpoints(lg)) {
         font-size: 14px;
     }

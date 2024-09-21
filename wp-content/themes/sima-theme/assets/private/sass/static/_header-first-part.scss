@@ -1,0 +1,80 @@
+.header__first__part {
+    align-items: center;
+    padding: 15px 0;
+    .languages {
+        width: calc(20% - 20px);
+        .lang__wrapper {
+            position: relative;
+            display: inline;
+            .current_language {
+                font-weight: 600;
+                border-radius: 5px;
+                color: $white;
+                background-color: $black;
+                padding: 10px;
+                @include smooth-transition;
+            }
+            .lang__dropdown {
+                position: absolute;
+                top: 31px;
+                border-radius: 5px;
+                background-color: $black;
+                li {
+                    padding: 10px 13px;
+                    @include smooth-transition;
+                    a {
+                        font-weight: 600;
+                        color: $white;
+                        border-bottom: 1px solid $white;
+                        @include smooth-transition;
+                    }
+                    &:hover {
+                        background-color: $white;
+                        a {
+                            color: $black;
+                            border-color: $black;
+                        }
+                    }
+                }
+            }
+            &:hover {
+                .current_language {
+                    color: $black;
+                    background-color: $morran-yellow;
+                }
+            }
+        }
+    }
+    .header__logo {
+        max-width: 200px;
+        background: $black;
+        border-radius: 3px;
+    }
+    .search__favourites__cart {
+        width: calc(20% - 20px);
+        justify-content: end;
+        gap: 20px;
+        .search {
+            width: 150px;
+            border-bottom: 1px solid $black;
+            cursor: pointer;
+            p {
+                font-size: 18px;
+                font-weight: 600;
+            }
+        }
+        #search-bar {
+            
+        }
+        .wishlist__button {
+            i {
+                font-size: 18px;
+                color: $black;
+                @include smooth-transition;
+                &:hover {
+                    color: $pink;
+                }
+            }
+        }
+    }
+}
