@@ -23,11 +23,12 @@
             width: 60%;
             height: auto;
             flex-direction: column;
-            background-color: rgba($morran-yellow, 0.30);
+            background-color: $white;
             border-radius: 0 0 5px 5px;
             border-top: 1px solid $black;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.20);
             padding: 40px 70px;
+            z-index: 999;
             .link {
                margin-bottom: 20px; 
                .sublink {
