@@ -1,5 +1,5 @@
 // Site font
-$gilda-display: "Gilda Display", serif;
+$montserrat: "Montserrat", sans-serif;
 
 // Site colors
 $morran-yellow: #EBAB12;
@@ -9,6 +9,7 @@ $violet: #ce7859;
 $error-red: red;
 $white: #ffffff;
 $dirty-white: #fff5ee;
+$pink: #ff007f;
 $black: #000000;
 
 @mixin smooth-transition {
