@@ -3,7 +3,7 @@
 // MODULE
 if(!$pageid){ return false; }
 
-$modules = get_field('module_content', $pageid);
+$modules = get_field('content', $pageid);
 
 if(empty($modules)){ return false; }
 
