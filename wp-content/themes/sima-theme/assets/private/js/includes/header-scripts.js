@@ -22,11 +22,9 @@ $(document).ready(function() {
     $('.sublinks').hide();
     $('.main__link').on('mouseenter', function() {
         $(this).find('.sublinks').stop().slideDown();
-        $('body').addClass('blurred-body');
     });
     $('.main__link').on('mouseleave', function() {
         $(this).find('.sublinks').stop().slideUp();
-        $('body').removeClass('blurred-body');
     });
 
     // Show image on hover on sublink

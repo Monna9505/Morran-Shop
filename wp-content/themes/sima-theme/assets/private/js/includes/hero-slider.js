@@ -8,6 +8,7 @@ $(document).ready(function() {
             infinite: false,
             prevArrow: '<button class="prev-button"><i class="fas fa-arrow-left"></i></button>',
             nextArrow: '<button class="next-button"><i class="fas fa-arrow-right"></i></button>',
+            autoplay: true,
         });
     }
 });
