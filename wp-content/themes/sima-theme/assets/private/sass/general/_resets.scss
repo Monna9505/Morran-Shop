@@ -14,11 +14,6 @@
     }
 }
 
-body.blurred-body *:not(header):not(header *):not(#wpadminbar):not(#wpadminbar *) {
-    filter: blur(3px);
-    transition: filter 0.3s ease;
-}
-
 img {
     height: auto;
     max-width: 100%;
@@ -42,8 +37,8 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1 {
-    font-size: 55px;
-    line-height: 60px;
+    font-size: 65px;
+    line-height: 70px;
     @media screen and (max-width: breakpoints(lg)) {
         font-size: 45px;
         line-height: 50px;
@@ -153,8 +148,11 @@ a {
 }
 
 .main-button {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
     color: $black;
-    background-color: $morran-yellow;
+    background: linear-gradient(217deg, rgba($morran-yellow, .8), rgba($black, 0.5) 70.71%);
     @include smooth-transition;
     &:hover {
         color: $white;
