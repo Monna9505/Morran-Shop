@@ -8,4 +8,5 @@
 jQuery(function($) {
     //=include includes/header-scripts.js
     //=include includes/hero-slider.js
+    //=include includes/new-products.js
 });
