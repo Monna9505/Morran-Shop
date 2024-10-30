@@ -7,6 +7,6 @@
 <form action="" id="search-bar">
     <div class="container">
         <input type="text" placeholder="Search Product">
-        <input type="submit" id="submit-search">
+        <input class="secondary-button" type="submit" id="submit-search">
     </div>
 </form>
