@@ -1,8 +1,23 @@
 .hero {
-    margin-bottom: 70px;
+    margin: 200px 0 70px 0;
+    @media screen and (max-width: breakpoints(xl)) {
+        margin: 170px 0 40px 0;
+    }
+    @media screen and (max-width: breakpoints(lg)) {
+        margin: 35px 0 0 0;
+    }
     .hero__slider {
         border-bottom: 2px solid $morran-yellow;
         margin-bottom: 350px;
+        @media screen and (max-width: breakpoints(lg)) {
+            margin-bottom: 170px;
+        }
+        @media screen and (max-width: breakpoints(md)) {
+            margin-bottom: 100px;
+        }
+        @media screen and (max-width: breakpoints(sm)) {
+            margin-bottom: 60px;
+        }
         .prev-button,
         .next-button {
             position: absolute;
@@ -24,16 +39,27 @@
                     background: linear-gradient(360deg, rgba($morran-yellow, .8), rgba($white, 0) 50%);
                     position: relative;
                     height: 650px;
-                    padding-top: 30px;
+                    padding-top: 40px;
+                    @media screen and (max-width: breakpoints(xl)) {
+                        height: 400px;
+                    }
                     .content {
                         width: 85%;
                         margin: 0 auto;
+                        @media screen and (max-width: breakpoints(xl)) {
+                            width: 100%;
+                        }
                         .slide__text {
                             gap: 20px;
-                            padding: 20px 30px;
+                            padding: 0 30px;
                             .descr {
                                 flex-wrap: nowrap;
                                 gap: 20px;
+                                @media screen and (max-width: breakpoints(lg)) {
+                                    flex-direction: column;
+                                    gap: 0;
+                                    padding: 0 16px;
+                                }
                                 .slide__title {
                                     width: 100%;
                                     text-align: center;
@@ -49,6 +75,13 @@
                                     align-self: center;
                                     border-left: 1px solid $black;
                                     padding: 0 0 0 20px;
+                                    @media screen and (max-width: breakpoints(lg)) {
+                                        text-align: center;
+                                        border-left: none;
+                                        border-top: 1px solid $black;
+                                        margin-top: 8px;
+                                        padding-top: 8px;
+                                    }
                                     p {
                                         font-size: 20px;
                                         line-height: 25px;
@@ -58,6 +91,9 @@
                             .slide__button {
                                 text-align: center;
                                 margin: 40px 0 50px 0;
+                                @media screen and (max-width: breakpoints(lg)) {
+                                    margin: 25px 0 20px 0;
+                                }
                             }
                         }
                         .slide__img {
@@ -67,6 +103,19 @@
                             width: 85%;
                             height: 600px;
                             margin: 0 auto;
+                            @media screen and (max-width: breakpoints(xl)) {
+                                height: 400px;
+                            }
+                            @media screen and (max-width: breakpoints(lg)) {
+                                width: 70%;
+                                height: 300px;
+                            }
+                            @media screen and (max-width: breakpoints(md)) {
+                                height: 250px;
+                            }
+                            @media screen and (max-width: breakpoints(sm)) {
+                                height: 190px;
+                            }
                             img {
                                 width: 100%;
                                 height: 100%;
