@@ -3,6 +3,14 @@
     gap: 30px;
     border-top: 1px solid $black;
     padding: 30px 0;
+    @media screen and (max-width: breakpoints(lg)) {
+      display: none;
+    }
+    .languages {
+      display: none;
+      position: absolute;
+      margin-top: 10px;
+    }
     .main__link {
         .main-menu-link {
             font-size: 22px;
@@ -15,6 +23,22 @@
                 color: $white;
                 background-color: $black;
             }
+            i {
+              font-size: 15px;
+              color: $black;
+              margin-left: 5px;
+              @include smooth-transition;
+            }
+        }
+        &.hovered-main-link {
+          .main-menu-link {
+            color: $white;
+            background-color: $black;
+            i {
+              transform: rotate(-180deg);
+              color: $white;
+            }
+          }
         }
         .sublinks {
             position: absolute;
