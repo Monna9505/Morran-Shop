@@ -11,7 +11,7 @@ $video_pb = (isset($module['video_pb'])) ? $module['video_pb'] : false;
 $title_pb = (isset($module['title_pb'])) ? $module['title_pb'] : false;
 $link_pb = (isset($module['link_pb'])) ? $module['link_pb'] : false;
 ?>
-<div class="page__break" <?php echo ($image_or_video == 'image' && !empty($background_image_pb['url'])) ? 'style="background:url(' . htmlspecialchars($background_image_pb['url']) . ') no-repeat center; background-size: cover;"' : ''; ?>>
+<div class="page__break" data-parallax <?php echo ($image_or_video == 'image' && !empty($background_image_pb['url'])) ? 'style="background:url(' . htmlspecialchars($background_image_pb['url']) . ') no-repeat center; background-size: cover;"' : ''; ?>>
     <?php if ($image_or_video == 'video' && isset($video_pb['url']) && !empty($video_pb['url'])) { ?>
         <video src="<?php echo $video_pb['url']; ?>"></video>
     <?php } ?>
