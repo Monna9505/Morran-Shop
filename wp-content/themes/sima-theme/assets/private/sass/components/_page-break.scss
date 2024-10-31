@@ -2,8 +2,12 @@
     position: relative;
     height: 700px;
     margin-bottom: 70px;
-    @media screen and (max-width: breakpoints(lg)) {
+    @media screen and (max-width: 1024px) {
+        height: 500px;
         margin-bottom: 50px;
+    }
+    @media screen and (max-width: breakpoints(md)) {
+        height: 450px;
     }
     .headings {
         position: absolute;
@@ -16,6 +20,9 @@
         .pb__title {
             color: $morran-yellow;
             margin-bottom: 40px;
+            @media screen and (max-width: breakpoints(lg)) {
+                margin-bottom: 20px;
+            }
         }
     }
 }

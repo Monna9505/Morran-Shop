@@ -10,4 +10,5 @@ jQuery(function($) {
     //=include includes/hero-slider.js
     //=include includes/new-products.js
     //=include includes/promotional-products.js
+    //=include includes/paralax.js
 });
