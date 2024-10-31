@@ -1,24 +1,44 @@
 footer {
     padding: 35px 0;
     background: linear-gradient(180deg, $morran-yellow, rgba(0, 0, 0, 0.70));
+    @media screen and (max-width: breakpoints(lg)) {
+        padding: 20px 0;
+    }
     .footer__first__part {
         align-items: start;
+        flex-wrap: nowrap;
+        gap: 15px;
         padding: 0 0 20px 0;
+        @media screen and (max-width: breakpoints(lg)) {
+            flex-direction: column;
+            gap: 15px;
+            padding: 0 0 15px 0;
+        }
         .footer__logo {
             display: block;
             max-width: 150px;
             height: 100%;
             background: $black;
             border-radius: 3px;
+            @media screen and (max-width: breakpoints(xl)) {
+                max-width: 130px;
+            }
         }
         .footer__main__links {
             padding: 0 15px 0 0;
             .footer_main_link {
                 margin-bottom: 20px;
+                @media screen and (max-width: breakpoints(lg)) {
+                    margin-bottom: 7px;
+                }
                 a {
                     font-size: 18px;
                     font-weight: 600;
                     color: $white;
+                    @media screen and (max-width: breakpoints(lg)) {
+                        font-size: 16px;
+                        line-height: 18px;
+                    }
                 }
             }
         }
@@ -27,14 +47,24 @@ footer {
             .categories__title {
                 font-weight: 600;
                 margin-bottom: 20px;
+                @media screen and (max-width: breakpoints(lg)) {
+                    margin-bottom: 10px;
+                }
             }
             .categories {
                 .category__link {
                     margin-bottom: 20px;
+                    @media screen and (max-width: breakpoints(lg)) {
+                        margin-bottom: 7px;
+                    }
                     a {
                         font-size: 18px;
                         font-weight: 600;
                         color: $white;
+                        @media screen and (max-width: breakpoints(lg)) {
+                            font-size: 16px;
+                            line-height: 18px;
+                        }
                     }
                 }
             }
@@ -44,6 +74,9 @@ footer {
             .contacts__title {
                 font-weight: 600;
                 margin-bottom: 20px;
+                @media screen and (max-width: breakpoints(lg)) {
+                    margin-bottom: 10px;
+                }
             }
             .contact__links {
                 .email__field,
@@ -53,10 +86,19 @@ footer {
                     font-weight: 600;
                     color: $white;
                     margin-bottom: 10px;
+                    @media screen and (max-width: breakpoints(lg)) {
+                        font-size: 16px;
+                        line-height: 18px;
+                        margin-bottom: 7px;
+                    }
                     a {
                         font-size: 18px;
                         font-weight: 600;
                         color: $white;
+                        @media screen and (max-width: breakpoints(lg)) {
+                            font-size: 16px;
+                            line-height: 18px;
+                        }
                     }
                 }
             }
@@ -66,14 +108,23 @@ footer {
             .social__links__text {
                 font-weight: 600;
                 margin-bottom: 20px;
+                @media screen and (max-width: breakpoints(lg)) {
+                    margin-bottom: 10px;
+                }
             }
             .soc__links {
                 display: flex;
                 gap: 20px;
+                @media screen and (max-width: breakpoints(lg)) {
+                    gap: 10px;
+                }
                 .social__media__link {
                     i {
                         font-size: 30px;
                         color: $white;
+                        @media screen and (max-width: breakpoints(lg)) {
+                            font-size: 20px;
+                        }
                     }
                 }
             }
@@ -83,11 +134,17 @@ footer {
         text-align: center;
         border-top: 1px solid $black;
         padding: 20px 0 0 0;
+        @media screen and (max-width: breakpoints(lg)) {
+            padding: 15px 0 0 0;
+        }
         span {
             color: $white;
         }
         .privacy__texts {
             margin-bottom: 10px;
+            @media screen and (max-width: breakpoints(lg)) {
+                margin-bottom: 5px;
+            }
             .privacy__policy {
                 color: $white;
             }
