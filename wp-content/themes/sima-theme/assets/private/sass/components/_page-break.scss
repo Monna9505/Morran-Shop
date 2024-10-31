@@ -2,6 +2,9 @@
     position: relative;
     height: 700px;
     margin-bottom: 70px;
+    @media screen and (max-width: breakpoints(lg)) {
+        margin-bottom: 50px;
+    }
     .headings {
         position: absolute;
         bottom: 50%;

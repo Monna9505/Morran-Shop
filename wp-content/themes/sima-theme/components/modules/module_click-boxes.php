@@ -28,12 +28,13 @@ $category_links = (isset($module['category_links'])) ? $module['category_links']
                         }
                     ?>
                     <a href="<?php echo isset($cat_link['link']['url']) ? $cat_link['link']['url'] : 'javascript:void(0)'; ?>" class="cat__link <?php echo $cat_class; ?>">
+                        <div class="overlay"></div>
+                        <?php if (isset($cat_link['title'])) { ?>
+                            <h4><?php echo $cat_link['title']; ?></h4>
+                        <?php } ?>
                         <?php if (isset($cat_link['image']['url'])) { ?>
                             <div class="cat__image">
                                 <img src="<?php echo $cat_link['image']['url']; ?>" alt="<?php echo $cat_link['image']['alt']; ?>">
-                                <?php if (isset($cat_link['title'])) { ?>
-                                    <h4><?php echo $cat_link['title']; ?></h4>
-                                <?php } ?>
                             </div>
                         <?php } ?>
                     </a>
