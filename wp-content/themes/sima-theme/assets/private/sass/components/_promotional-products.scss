@@ -1,5 +1,8 @@
 .promotional__products {
     margin-bottom: 70px;
+    @media screen and (max-width: breakpoints(lg)) {
+        margin-bottom: 50px;
+    }
     .headings {
         margin-bottom: 40px;
         h2 {
