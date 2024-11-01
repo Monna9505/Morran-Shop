@@ -28,7 +28,7 @@ $p_cta_button = (isset($module['cta_button'])) ? $module['cta_button'] : false;
                 <div class="carpet__background"></div>
                 <div id="promo__slider">
                     <?php foreach ($promotinal_slider as $slide) { ?>
-                            <div class="p__slide">
+                            <a href="<?php echo (isset($p_cta_button['url']) && !empty($p_cta_button['url'])) ? $p_cta_button['url'] : 'javascript:void(0)'; ?>" class="p__slide">
                                 <?php if (isset($slide['image']['url']) && !empty($slide['image']['url'])) { ?>
                                     <div class="product__img">
                                         <img src="<?php echo $slide['image']['url']; ?>" 
@@ -43,7 +43,7 @@ $p_cta_button = (isset($module['cta_button'])) ? $module['cta_button'] : false;
                                         <p><?php echo $slide['description']; ?></p>
                                     </div>
                                 <?php } ?>
-                            </div> 
+                            </a> 
                     <?php } ?>
                 </div>
             </div>

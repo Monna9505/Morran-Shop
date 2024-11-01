@@ -24,7 +24,8 @@
             transform: translateY(50px);
             width: 100%;
             height: 180px;
-            background-color: $morran-orange;
+            background-color: $morran-light-yellow;
+            box-shadow: 0 10px 24px -15px;
             z-index: -3;
         }
         #promo__slider {
@@ -41,6 +42,9 @@
                     .slide__title {
                         text-align: center;
                         margin-bottom: 15px;
+                        @media screen and (max-width: breakpoints(lg)) {
+                            margin-bottom: 5px;
+                        }
                     }
                     .slide__descr {
                         text-align: center;
