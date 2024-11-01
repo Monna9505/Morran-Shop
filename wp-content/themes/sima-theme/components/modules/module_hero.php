@@ -54,15 +54,20 @@ $hero_image = (isset($module['hero_image'])) ? $module['hero_image'] : false;
     <?php } else if (!empty($hero_image)) { 
         $image = $hero_image['hero_image']['url'];
         ?>
-        <a href="<?php echo (isset($hero_image['hero_link']['url']) && !empty($hero_image['hero_link']['url'])) 
-            ? $hero_image['hero_link']['url'] 
-            : 'javascript:void(0)'?>" 
-            class="hero__banner" 
-            <?php echo (isset($image) && !empty($image)) 
-            ? "style='background: url($image) no-repeat center'" : ''; ?>>
-            <?php if (isset($hero_image['hero_title']) && !empty($hero_image['hero_title'])) { ?>
-                <h1 class="hero__title"><?php echo $hero_image['hero_title']; ?></h1>
-            <?php } ?>
-        </a>
+        <div class="hero__banner" <?php echo (isset($image) && !empty($image)) ? "style='background: url($image) no-repeat center'" : ''; ?>>
+            <div class="hero__content-wrapper">
+                <div class="title__overlay"></div>
+                <div class="content">
+                    <?php if (isset($hero_image['hero_title']) && !empty($hero_image['hero_title'])) { ?>
+                        <h1 class="hero__title"><?php echo $hero_image['hero_title']; ?></h1>
+                    <?php } ?>
+                    <?php if (isset($hero_image['hero_link']['url']) && !empty($hero_image['hero_link']['url'] )) { ?>
+                        <a href="<?php echo $hero_image['hero_link']['url']; ?>" class="secondary-button">
+                            <?php echo $hero_image['hero_link']['title']; ?>
+                        </a>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
     <?php } ?>
 </div>
