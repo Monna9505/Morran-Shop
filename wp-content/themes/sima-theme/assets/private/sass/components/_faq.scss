@@ -1,0 +1,74 @@
+.faq {
+    margin-bottom: 70px;
+    @media screen and (max-width: breakpoints(lg)) {
+        margin-bottom: 50px;
+    }
+    .container-fluid {
+        max-width: 1200px;
+    }
+    .faq__title {
+        text-align: center;
+        margin-bottom: 40px;
+        @media screen and (max-width: breakpoints(lg)) {
+            margin-bottom: 20px;
+        }
+    }
+    .faq__wrapper {
+        .q_and_a {
+            position: relative;
+            left: 0;
+            background-color: $white;
+            border-radius: 20px;
+            border-left: 25px solid $morran-orange;
+            padding: 20px 40px;
+            margin-bottom: 30px;
+            @include smooth-transition;
+            @media screen and (max-width: breakpoints(lg)) {
+                border-left: 15px solid $morran-orange;
+                padding: 12px 18px;
+                margin-bottom: 15px;
+            }
+            .question {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                @include smooth-transition;
+                @media screen and (max-width: breakpoints(md)) {
+                    font-size: 18px;
+                    line-height: 22px;
+                }
+                i {
+                    font-size: 18px;
+                    color: $morran-orange;
+                    border: 1px solid $morran-orange;
+                    border-radius: 50%;
+                    padding: 8px 10px;
+                    @media screen and (max-width: breakpoints(lg)) {
+                        font-size: 12px;
+                    }
+                }
+            }
+            .answer {
+                display: none;
+                border-top: 1px solid $morran-orange;
+                margin-top: 10px;
+                padding-top: 10px;
+                p {
+                    line-height: 32px;
+                    @media screen and (max-width: breakpoints(lg)) {
+                        line-height: 24px;
+                    }
+                }
+            }
+            &:hover,
+            &.clicked-qa {
+                left: -30px;
+                border-color: $morran-yellow;
+                @media screen and (max-width: breakpoints(lg)) {
+                    left: -10px;
+                }
+            }
+        }
+    }
+}

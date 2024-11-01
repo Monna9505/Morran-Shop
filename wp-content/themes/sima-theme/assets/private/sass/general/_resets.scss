@@ -9,6 +9,7 @@
 
 .container-fluid {
     padding: 0 30px;
+    margin: 0 auto;
     @media screen and (max-width: breakpoints(lg)) {
         padding: 0 15px;
     }
