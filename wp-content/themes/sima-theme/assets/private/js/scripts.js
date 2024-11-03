@@ -12,4 +12,5 @@ jQuery(function($) {
     //=include includes/promotional-products.js
     //=include includes/paralax.js
     //=include includes/faq.js
+    //=include includes/contact-form.js
 });

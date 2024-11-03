@@ -62,14 +62,14 @@ $rights_reserved_text = get_field('rights_reserved_text', 'option') ?: false;
                     <div class="contact__links">
                         <?php if (isset($contacts_group['email']['url']) && !empty($contacts_group['email']['url'])) { ?>
                             <div class="email__field">
-                                <a href="<?php echo $contact_field['email']['url']; ?>">
+                                <a href="<?php echo $contacts_group['email']['url']; ?>">
                                     <?php echo $contacts_group['email']['title']; ?>
                                 </a>
                             </div>
                         <?php } ?>
                         <?php if (isset($contacts_group['telephone_number']['url']) && !empty($contacts_group['telephone_number']['url'])) { ?>
                             <div class="telephone__field">
-                                <a href="<?php echo $contact_field['telephone_number']['url']; ?>">
+                                <a href="<?php echo $contacts_group['telephone_number']['url']; ?>">
                                     <?php echo $contacts_group['telephone_number']['title']; ?>
                                 </a>
                             </div>
