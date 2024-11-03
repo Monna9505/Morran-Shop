@@ -6,7 +6,6 @@ Text Domain: sima-theme
 Version: 1.0
 */
 body {
-    font-family: "Montserrat", sans-serif;
     overflow-x: hidden;
     background-color: #fff5ee;
     margin: 0 !important;
@@ -14,5 +13,6 @@ body {
 }
 
 * {
+    font-family: "Montserrat", sans-serif;
     box-sizing: border-box;
 }

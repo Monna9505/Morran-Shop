@@ -115,13 +115,19 @@ h6 {
     }
 }
 
-p, span, li {
+p, span, li, input::placeholder {
     font-size: 16px;
     line-height: 22px;
     font-weight: 400;
     @media screen and (max-width: breakpoints(xl)) {
         font-size: 14px;
     }
+}
+
+textarea::placeholder {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
 }
 
 ul {
