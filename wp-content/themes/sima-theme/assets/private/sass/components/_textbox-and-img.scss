@@ -1,0 +1,97 @@
+.textbox__and__img {
+    margin-bottom: 70px;
+    .ti__title {
+        margin-bottom: 10px;
+    }
+    .ti__descr {
+        p {
+            font-size: 20px;
+            @media screen and (max-width: breakpoints(lg)) {
+                font-size: 17px;
+                line-height: 20px;
+            }
+        }
+    }
+    .textbox__image__repeater {
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        border: 1px solid $black;
+        margin-top: 40px;
+        @media screen and (max-width: 1024px) {
+            margin-top: 30px;
+        }
+        @media screen and (max-width: breakpoints(md)) {
+            margin-top: 20px;
+        }
+        @media screen and (max-width: breakpoints(sm)) {
+            border-radius: 20px;
+        }
+        .service {
+            flex-grow: 1;
+            flex-basis: calc(50% - 15px);
+            &:nth-child(4n),
+            &:nth-child(4n + 3) {
+                flex-direction: row-reverse;
+            }
+            @media screen and (max-width: 1024px) {
+                &:nth-child(even) {
+                    flex-direction: column;
+                }
+                &:nth-child(odd) {
+                    flex-direction: column-reverse;
+                }
+            }
+            @media screen and (max-width: breakpoints(sm)) {
+                flex-basis: 100%;
+                &:nth-child(even) {
+                    flex-direction: column-reverse;
+                }
+            }
+            .textbox {
+                width: 50%;
+                padding: 25px;
+                @media screen and (max-width: 1024px) {
+                    width: 100%;
+                }
+                @media screen and (max-width: breakpoints(lg)) {
+                    padding: 25px 16px;
+                }
+                .service__title {
+                    margin-bottom: 7px;
+                }
+                .service__descr {
+                    line-height: 20px;
+                }
+                .service__link {
+                    margin-top: 35px;
+                    a {
+                        font-size: 15px;
+                        line-height: 18px;
+                        padding: 10px 20px;
+                    }
+                }
+            }
+            .service__image {
+                width: 50%;
+                @media screen and (max-width: 1024px) {
+                    width: 100%;
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            &:first-child {
+                .service__image {
+                    img {
+                        @media screen and (max-width: breakpoints(sm)) {
+                            border-radius: 20px 20px 0 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -8,6 +8,10 @@
             font-size: 20px;
             line-height: 22px;
             text-align: center;
+            @media screen and (max-width: breakpoints(lg)) {
+                font-size: 17px;
+                line-height: 20px;
+            }
         }
     }
     .columns__wrapper {

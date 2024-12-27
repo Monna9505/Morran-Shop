@@ -49,8 +49,8 @@ h1 {
         line-height: 42px;
     }
     @media screen and (max-width: breakpoints(md)) {
-        font-size: 28px;
-        line-height: 32px;
+        font-size: 32px;
+        line-height: 35px;
     }
 }
 
@@ -62,8 +62,8 @@ h2 {
         line-height: 43px;
     }
     @media screen and (max-width: breakpoints(lg)) {
-        font-size: 32px;
-        line-height: 35px;
+        font-size: 30px;
+        line-height: 33px;
     }
     @media screen and (max-width: breakpoints(md)) {
         font-size: 25px;
@@ -79,12 +79,8 @@ h3 {
         line-height: 37px;
     }
     @media screen and (max-width: breakpoints(lg)) {
-        font-size: 28px;
-        line-height: 32px;
-    }
-    @media screen and (max-width: breakpoints(md)) {
-        font-size: 24px;
-        line-height: 25px;
+        font-size: 25px;
+        line-height: 28px;
     }
 }
 
@@ -93,7 +89,7 @@ h4 {
     line-height: 30px;
     @media screen and (max-width: breakpoints(xl)) {
         font-size: 22px;
-        line-height: 27px;
+        line-height: 25px;
     }
 }
 
@@ -102,7 +98,7 @@ h5 {
     line-height: 27px;
     @media screen and (max-width: breakpoints(xl)) {
         font-size: 20px;
-        line-height: 25px;
+        line-height: 23px;
     }
 }
 
@@ -111,7 +107,7 @@ h6 {
     line-height: 25px;
     @media screen and (max-width: breakpoints(xl)) {
         font-size: 18px;
-        line-height: 23px;
+        line-height: 21px;
     }
 }
 
