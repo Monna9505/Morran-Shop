@@ -45,7 +45,7 @@ $(document).ready(function() {
         });
 
         // Show image on hover on sublink
-        $('.image__sublink').hide().first().show(); 
+        $('.image__sublink').not(":first").hide();
 
         $('.sublink').hover(function() {
             $('.image__sublink').hide();
