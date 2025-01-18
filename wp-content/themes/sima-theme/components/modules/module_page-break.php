@@ -5,6 +5,7 @@
 
 if (!isset($module)) { return; }
 
+$pb_section_id = (isset($module['pb_section_id'])) ? $module['pb_section_id'] : false;
 $image_or_video = (isset($module['image_or_video'])) ? $module['image_or_video'] : false;
 $background_image_pb = (isset($module['background_image_pb'])) ? $module['background_image_pb'] : false;
 $video_pb = (isset($module['video_pb'])) ? $module['video_pb'] : false;

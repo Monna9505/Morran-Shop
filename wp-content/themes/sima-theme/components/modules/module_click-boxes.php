@@ -5,11 +5,12 @@
 
 if (!isset($module)) { return; }
 
+$cb_section_id = (isset($module['cb_section_id'])) ? $module['cb_section_id'] : false;
 $heading_cb = (isset($module['heading_cb'])) ? $module['heading_cb'] : false;
 $category_links = (isset($module['category_links'])) ? $module['category_links'] : false;
 ?>
 
-<div class="click__boxes">
+<div class="click__boxes" <?php echo !empty($cb_section_id) ? 'id=' . $cb_section_id : ''; ?>>
     <div class="container">
         <?php if (!empty($heading_cb)) { ?>
             <h2><?php echo $heading_cb; ?></h2>

@@ -5,6 +5,7 @@
 
 if (!isset($module)) { return; }
 
+$hero_section_id = (isset($module['hero_section_id'])) ? $module['hero_section_id'] : false;
 $hero_image_hero_slider = (isset($module['hero_image_hero_slider'])) ? $module['hero_image_hero_slider'] : false;
 $hero_slider = (isset($module['hero_slider'])) ? $module['hero_slider'] : false;
 $hero_image = (isset($module['hero_image'])) ? $module['hero_image'] : false;

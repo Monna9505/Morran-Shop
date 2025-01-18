@@ -5,13 +5,14 @@
 
 if (!isset($module)) { return; }
 
+$pp_section_id = (isset($module['pp_section_id'])) ? $module['pp_section_id'] : false;
 $promotional_heading = (isset($module['promotional_heading'])) ? $module['promotional_heading'] : false;
 $promo_short_description = (isset($module['promo_short_description'])) ? $module['promo_short_description'] : false;
 $promotinal_slider = (isset($module['promotinal_slider'])) ? $module['promotinal_slider'] : false;
 $p_cta_button = (isset($module['cta_button'])) ? $module['cta_button'] : false;
 ?>
 
-<div class="promotional__products">
+<div class="promotional__products" <?php echo !empty($pp_section_id) ? 'id=' . $pp_section_id : ''; ?>>
     <div class="container">
         <div class="headings">
             <?php if (!empty($promotional_heading)) { ?>

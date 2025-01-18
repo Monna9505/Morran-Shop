@@ -5,12 +5,13 @@
 
 if (!isset($module)) { return; }
 
+$tc_section_id = (isset($module['tc_section_id'])) ? $module['tc_section_id'] : false;
 $dtc_title = (isset($module['dtc_title'])) ? $module['dtc_title'] : false;
 $dtc_description = (isset($module['dtc_description'])) ? $module['dtc_description'] : false;
 $two_columns = (isset($module['two_columns'])) ? $module['two_columns'] : false;
 ?>
 
-<div class="two__columns">
+<div class="two__columns" <?php echo !empty($tc_section_id) ? 'id=' . $tc_section_id : ''; ?>>
     <div class="container titles">
         <?php if (!empty($dtc_title)) { ?>
             <h2 class="dtc__title"><?php echo $dtc_title; ?></h2>
