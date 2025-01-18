@@ -5,10 +5,11 @@
 
 if (!isset($module)) { return; }
 
+$np_section_id = (isset($module['np_section_id'])) ? $module['np_section_id'] : false;
 $new_products_title = (isset($module['new_products_title'])) ? $module['new_products_title'] : false;
 $new_products = (isset($module['new_products'])) ? $module['new_products'] : false;
 ?>
-<div class="new__products">
+<div class="new__products" <?php echo !empty($np_section_id) ? 'id=' . $np_section_id : ''; ?>>
     <div class="container">
         <?php if (!empty($new_products_title)) { ?>
             <h2><?php echo $new_products_title; ?></h2>
