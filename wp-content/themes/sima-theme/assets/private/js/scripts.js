@@ -13,4 +13,5 @@ jQuery(function($) {
     //=include includes/paralax.js
     //=include includes/faq.js
     //=include includes/contact-form.js
+    //=include includes/scroll-to-section.js
 });
