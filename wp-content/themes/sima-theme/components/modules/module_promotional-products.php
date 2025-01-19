@@ -26,7 +26,6 @@ $p_cta_button = (isset($module['cta_button'])) ? $module['cta_button'] : false;
         </div>
         <?php if (!empty($promotinal_slider) && is_array($promotinal_slider)) { ?>
             <div class="slider__content">
-                <div class="carpet__background"></div>
                 <div id="promo__slider">
                     <?php foreach ($promotinal_slider as $slide) { ?>
                             <a href="<?php echo (isset($p_cta_button['url']) && !empty($p_cta_button['url'])) ? $p_cta_button['url'] : 'javascript:void(0)'; ?>" class="p__slide">

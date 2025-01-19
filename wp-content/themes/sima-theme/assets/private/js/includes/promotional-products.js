@@ -5,22 +5,17 @@ $(document).ready(function() {
         promoSlider.slick({
             slidesToShow: 3,
             slidesToScroll: 1,
+            centerMode: true,
+            centerPadding: '0',
+            infinite: true,
             prevArrow: '<button class="prev-button"><i class="fas fa-arrow-left"></i></button>',
             nextArrow: '<button class="next-button"><i class="fas fa-arrow-right"></i></button>',
-            infinite: false,
-            // autoplay: true,
-            // autoplaySpeed: 2000,
             responsive: [
                 {
-                  breakpoint: 1199,
-                  settings: {
-                    slidesToShow: 2,
-                  }
-                },
-                {
-                  breakpoint: 575,
+                  breakpoint: 765,
                   settings: {
                     slidesToShow: 1,
+                    centerMode: false,
                   }
                 }
             ]
