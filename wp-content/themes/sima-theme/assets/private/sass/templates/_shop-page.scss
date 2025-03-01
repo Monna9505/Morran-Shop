@@ -1,0 +1,157 @@
+.shop-page {
+    margin: 200px 0 50px 0;
+    .shop__categories {
+        text-align: center;
+        margin-bottom: 70px;
+        @media screen and (max-width: breakpoints(lg)) {
+            margin-bottom: 40px;
+        }
+        .previous-cat,
+        .next-cat {
+            position: absolute;
+            bottom: 20px;
+            box-shadow: none;
+            background-color: unset;
+            i {
+                font-size: 25px;
+            }
+        }
+        .next-cat {
+            right: 40px;
+            @media screen and (max-width: 420px) {
+                right: 0;
+            }
+        }
+        a {
+            flex-basis: calc(20% - 20px);
+            text-align: -webkit-center;
+            background-color: $white;
+            border-radius: 10px;
+            padding: 25px 0;
+            @media screen and (max-width: breakpoints(lg)) {
+                width: 95% !important;
+                padding: 15px 0;
+            }
+            .cat_image {
+                width: 65px;
+                margin-bottom: 25px;
+                @media screen and (max-width: breakpoints(lg)) {
+                    width: 35px;
+                    margin-bottom: 15px;
+                }
+                img {
+                    width: 100%;
+                }
+            }
+            .cat_name {
+                font-size: 22px;
+                font-weight: 600;
+                text-transform: uppercase;
+                @media screen and (max-width: breakpoints(lg)) {
+                    font-size: 18px;
+                }
+            }
+            &.cat_all {
+                align-content: center;
+                background-color: rgba($morran-light-yellow, 0.3);
+                border: 1px solid $morran-yellow;
+            }
+            &.active_cat {
+                background-color: $black;
+                color: $white;
+            }
+        }
+    }
+    .products__shop__list {
+        margin-bottom: 70px;
+        .products {
+            gap: 10px;
+            .product {
+                flex-wrap: nowrap;
+                justify-content: normal;
+                width: 48%;
+                gap: 15px;
+                margin-bottom: 30px;
+                @media screen and (max-width: 1075px) {
+                    width: 100%;
+                    justify-content: space-between;
+                }
+                @media screen and (max-width: breakpoints(sm)) {
+                    height: 100%;
+                    flex-direction: column;
+                    justify-content: normal;
+                }
+                .product__image {
+                    width: 370px;
+                    height: 100%;
+                    @media screen and (max-width: breakpoints(sm)) {
+                        width: 100%;
+                        height: 350px;
+                    }
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 15px;
+                    }
+                }
+                .product__content {
+                    height: 100%;
+                    width: 50%;
+                    background-color: $white;
+                    border-radius: 15px;
+                    padding: 20px 10px 20px 30px;
+                    @media screen and (max-width: 1075px) {
+                        width: 60%;
+                    }
+                    @media screen and (max-width: breakpoints(sm)) {
+                        width: 100%;
+                        height: unset;
+                        padding: 30px 10px 40px 20px;
+                    }
+                    .product__title {
+                        font-size: 28px;
+                        line-height: 32px;
+                        margin-bottom: 15px;
+                    }
+                    .product__price {
+                        margin-top: 10px;
+                    }
+                    .view__product__button {
+                        margin-top: 30px;
+                        a {
+                            font-size: 14px;
+                            line-height: 17px;
+                            padding: 10px 15px;
+                            @include smooth-transition;
+                            &:hover {
+                                background-color: $black;
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .pagination {
+            text-align: center;
+            .page-numbers {
+                width: 35px;
+                height: 35px;
+                display: inline-block;
+                font-weight: 700;
+                align-content: space-evenly;
+                border: 2px solid $morran-yellow;
+                border-radius: 50%;
+                background-color: $white;
+                @include smooth-transition;
+                &:hover,
+                &.current {
+                    background-color: $morran-yellow;
+                    color: $white;
+                    border-color: $black;
+                }
+            }
+        }
+    }
+}
