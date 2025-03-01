@@ -17,3 +17,8 @@ require_once('definitions/acf-support.php');
  * Enqueue scripts/styles
  */
 require_once('definitions/enqueue.php');
+
+/**
+ * Helper Functions
+ */
+require_once('definitions/backend-helpers.php');

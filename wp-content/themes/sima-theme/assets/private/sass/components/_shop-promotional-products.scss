@@ -1,0 +1,26 @@
+.shop__promotional__products {
+    margin-bottom: 70px;
+    .promo-shop-products-title {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .promo__shop__products {
+        .promo {
+            flex-basis: 24%;
+            text-align: center;
+            background-color: $white;
+            border-radius: 15px;
+            padding: 30px;
+            @media screen and (max-width: breakpoints(md)) {
+                flex-basis: calc(50% - 10px);
+                margin-bottom: 30px;
+            }
+            @media screen and (max-width: breakpoints(sm)) {
+                flex-basis: 100%;
+            }
+            img {
+                border-radius: 10px;
+            }
+        }
+    }
+}
