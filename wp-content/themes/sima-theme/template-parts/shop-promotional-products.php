@@ -20,7 +20,6 @@ $prod_query = new WP_Query($sale_products);
                 $prod_query->the_post(); 
                 $promo_product_image = wp_get_attachment_image_src(get_post_thumbnail_id())[0] ?: false;
                 ?>
-                <script>console.log(<?php echo json_encode(); ?>);</script>
                 <a href="<?php echo the_permalink(); ?>" class="promo">
                     <?php if (!empty($promo_product_image)) { ?>
                         <img src="<?php echo $promo_product_image; ?>" alt="">
