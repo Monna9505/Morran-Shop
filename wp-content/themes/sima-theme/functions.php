@@ -22,3 +22,8 @@ require_once('definitions/enqueue.php');
  * Helper Functions
  */
 require_once('definitions/backend-helpers.php');
+
+/**
+ * Woocommerce Checkout
+ */
+require_once('woocommerce/woocommerce-checkout.php');

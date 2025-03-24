@@ -4,7 +4,6 @@
  */
 $header_logo = get_field('header_logo', 'option') ?: false;
 ?>
-
 <div class="header__first__part standard-grid">
     <?php include(locate_template('components/shared/header-languages.php')); ?>
     <?php if (!empty($header_logo['url'])) { 
@@ -37,12 +36,13 @@ $header_logo = get_field('header_logo', 'option') ?: false;
             <i class="fas fa-search"></i>
         </div>
         <?php include(locate_template('components/shared/search-bar.php')); ?>
-        <?php if (!defined('WISHLIST_ADDED')) {
-            define('WISHLIST_ADDED', true);
-            ?>
-            <a href="<?php echo get_permalink( get_option( 'yith_wcwl_wishlist_page_id' ) ); ?>" class="wishlist__button">
-                <i class="fas fa-heart"></i>
-            </a>
-        <?php } ?>
+        <a href="<?php echo wc_get_cart_url(); ?>" class="cart" title="<?php _e( 'View your shopping cart' ); ?>">
+            <span class="cart__icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </span>
+            <span class="cart__items__amount">
+                <?php echo WC()->cart->get_cart_contents_count(); ?>
+            </span>
+        </a>
     </div>
 </div>
