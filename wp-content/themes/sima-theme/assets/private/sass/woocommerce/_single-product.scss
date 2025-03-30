@@ -12,15 +12,28 @@
         @media screen and (max-width: breakpoints(lg)) {
             flex-direction: column;
         }
-        .product__main__image {
+        .product__images {
             flex-basis: calc(50% - 20px);
-            box-shadow: 0px 22px 20px 0px rgba(0, 0, 0, 0.3);
-            @media screen and (max-width: breakpoints(lg)) {
-                margin-bottom: 30px;
+            .product__main__image {
+                img {
+                    width: 100%;
+                    border-radius: 10px;
+                    box-shadow: 0px 22px 20px 0px rgba(0, 0, 0, 0.3);
+                    @media screen and (max-width: breakpoints(lg)) {
+                        margin-bottom: 30px;
+                    }
+                }
             }
-            img {
-                width: 100%;
-                border-radius: 10px;
+            .product__gallery {
+                justify-content: left;
+                gap: 10px;
+                .gallery__item {
+                    cursor: pointer;
+                    flex-basis: calc(15% - 10px);
+                    img {
+                        border-radius: 5px;
+                    }
+                }
             }
         }
         .product__content {
@@ -71,13 +84,15 @@
                     flex-direction: column;
                 }
                 li.product {
-                    width: 33.33%;
+                    width: 33%;
                     margin: 0;
                     @media screen and (max-width: breakpoints(sm)) {
                         width: 100%;
                     }
                     a {
                         img {
+                            height: 300px;
+                            object-fit: cover;
                             border-radius: 10px;
                         }
                         .woocommerce-loop-product__title {
