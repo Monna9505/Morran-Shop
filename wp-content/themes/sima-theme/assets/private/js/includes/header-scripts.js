@@ -18,10 +18,6 @@ $(document).ready(function() {
     // Show/hide search bar on 'click'
     $('#search-bar').hide();
 
-    $('.search').on('click', function(event) {
-        $('#search-bar').fadeToggle();
-    });
-
     if ($(window).width() > 991) {
         // Show/hide languages on hover
         $('.lang__dropdown').hide();
@@ -80,8 +76,4 @@ $(document).ready(function() {
             submenu.stop().slideDown();
         }
     }); 
-
-    $('.mobile__header__wrapper .header__links .main__link a').on('click', function() {
-        $('.mobile__header__wrapper .header__links').slideUp();
-    });
 });

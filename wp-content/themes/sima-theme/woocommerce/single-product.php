@@ -16,11 +16,23 @@ include(locate_template('components/shared/header.php'));
 <div class="single__product">
     <div class="container">
         <div class="poduct__wrapper standard-grid">
-            <?php if (!empty($product_image[0])) { ?>
-                <div class="product__main__image">
-                    <img src="<?php echo esc_url($product_image[0]); ?>" alt="">
-                </div>
-            <?php } ?>
+            <div class="product__images">
+                <?php if (!empty($product_image[0])) { ?>
+                    <div class="product__main__image">
+                        <img src="<?php echo esc_url($product_image[0]); ?>" alt="">
+                    </div>
+                <?php } ?>
+                <?php if (!empty($gallery_images)) { ?>
+                    <div class="product__gallery standard-grid">
+                        <?php foreach ($gallery_images as $image_id) { 
+                            $image_url = wp_get_attachment_image_url($image_id, 'full'); ?>
+                            <div class="gallery__item">
+                                <img src="<?php echo esc_url($image_url); ?>" alt="Product Gallery Image">
+                            </div>
+                        <?php } ?>
+                    </div>
+                <?php } ?>
+            </div>
             <div class="product__content">
                 <h3 class="product__title"><?php echo esc_html($product_title); ?></h3>
                 <div class="product__descr">
