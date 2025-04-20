@@ -1,0 +1,45 @@
+#morran-search-bar {
+    .wrap {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 0px;
+        height: 40px;
+        background: $morran-yellow;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        padding-right: 40px;
+        @include smooth-transition;
+        .input {
+            position: relative;
+            width: 0%;
+            font-size: 16px;
+            border: 0;
+            background: transparent;
+            outline: none;
+            color: $white;
+            @include smooth-transition;
+            &.active {
+                width: 100%;
+                padding-left: 5px;
+                @include smooth-transition;
+            }
+            &::placeholder {
+                color: $white;
+            }
+        }
+        .fa-search {
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            color: $white;
+        }
+        &.active {
+            width: 350px;
+            padding-left: 25px;
+            @include smooth-transition;
+        }
+    }
+}

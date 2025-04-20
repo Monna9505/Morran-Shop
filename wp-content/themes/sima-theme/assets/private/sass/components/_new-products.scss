@@ -53,6 +53,12 @@
                 }
             }
             .image__grid {
+                flex-wrap: nowrap;
+                justify-content: left;
+                gap: 15px;
+                @media screen and (max-width: 768px) {
+                    gap: 5px;
+                }
                 .new__arrival-image {
                     flex-basis: calc(33.33% - 10px);
                     cursor: pointer;

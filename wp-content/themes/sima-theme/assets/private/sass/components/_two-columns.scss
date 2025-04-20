@@ -26,7 +26,7 @@
         padding: 40px 0 50px 0;
         .columns__content {
             background-color: $morran-yellow;
-            border-radius: 30px;
+            border-radius: 10px;
             margin: 40px 0 70px 0;
             @media screen and (max-width: breakpoints(lg)) {
                 flex-direction: column;
@@ -36,10 +36,10 @@
                 position: relative;
                 flex-basis: calc(60% - 10px);
                 background-color: $gray;
-                border-radius: 30px 0 0 30px;
+                border-radius: 10px 0 0 10px;
                 padding: 40px 50px 40px 15%;
                 @media screen and (max-width: breakpoints(lg)) {
-                    border-radius: 30px;
+                    border-radius: 10px;
                     padding-left: 20%;
                 }
                 @media screen and (max-width: 675px) {

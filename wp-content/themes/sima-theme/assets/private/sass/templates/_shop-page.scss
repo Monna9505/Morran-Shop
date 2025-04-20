@@ -83,23 +83,22 @@
                 }
                 .product__image {
                     width: 370px;
-                    height: 100%;
+                    height: 300px;
                     @media screen and (max-width: breakpoints(sm)) {
                         width: 100%;
-                        height: 350px;
                     }
                     img {
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
-                        border-radius: 15px;
+                        border-radius: 10px;
                     }
                 }
                 .product__content {
                     height: 100%;
                     width: 50%;
                     background-color: $white;
-                    border-radius: 15px;
+                    border-radius: 10px;
                     padding: 20px 10px 20px 30px;
                     @media screen and (max-width: 1075px) {
                         width: 60%;

@@ -1,6 +1,10 @@
 .header__first__part {
     align-items: center;
+    border-bottom: 1px solid $white;
     padding: 15px 0;
+    @media screen and (max-width: breakpoints(lg)) {
+        border: none;
+    }
     .languages {
         width: calc(20% - 20px);
         @media screen and (max-width: breakpoints(lg)) {
@@ -52,15 +56,15 @@
     }
     .header__logo {
         max-width: 200px;
-        background: $black;
         border-radius: 3px;
         @media screen and (max-width: breakpoints(lg)) {
             max-width: 130px;
         }
     }
     .search__favourites__cart {
-        width: calc(20% - 20px);
+        width: calc(50% - 10px);
         justify-content: end;
+        flex-wrap: nowrap;
         gap: 20px;
         @media screen and (max-width: breakpoints(lg)) {
             width: calc(55% - 10px);
@@ -68,6 +72,7 @@
         }
         .dots__menu {
             display: none;
+            align-self: center;
             cursor: pointer;
             @media screen and (max-width: breakpoints(lg)) {
                 display: block;
@@ -75,32 +80,20 @@
             .dot {
                 width: 3px;
                 height: 3px;
-                border: 1px solid $black;
+                border: 1px solid $white;
                 border-radius: 50%;
                 margin: 2px;
             }
         }
-        .search {
-            align-self: center;
-            cursor: pointer;
-            p {
-                font-size: 18px;
-                font-weight: 600;
+        @media screen and (max-width: 991px) {
+            .desktop-searchbar {
+                display: none;
             }
         }
-        #search-bar {
-
-        }
-        .wishlist__button {
+        .cart {
             align-self: center;
-            i {
-                font-size: 18px;
-                color: $black;
-                @include smooth-transition;
-                &:hover {
-                    color: $pink;
-                }
-            }
+            color: $white;
+            gap: 5px;
         }
     }
 }
