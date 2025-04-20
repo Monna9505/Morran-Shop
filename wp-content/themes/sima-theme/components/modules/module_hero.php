@@ -63,7 +63,7 @@ $hero_image = (isset($module['hero_image'])) ? $module['hero_image'] : false;
                         <h1 class="hero__title"><?php echo $hero_image['hero_title']; ?></h1>
                     <?php } ?>
                     <?php if (isset($hero_image['hero_link']['url']) && !empty($hero_image['hero_link']['url'] )) { ?>
-                        <a href="<?php echo $hero_image['hero_link']['url']; ?>" class="secondary-button">
+                        <a href="<?php echo $hero_image['hero_link']['url']; ?>" class="main-button">
                             <?php echo $hero_image['hero_link']['title']; ?>
                         </a>
                     <?php } ?>

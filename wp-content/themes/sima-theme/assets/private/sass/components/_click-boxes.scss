@@ -23,7 +23,7 @@
         }
         .cat__link {
             position: relative;
-            border-radius: 15px;
+            border-radius: 10px;
             overflow: hidden;
             @include smooth-transition;
             &:hover {
@@ -121,7 +121,7 @@
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
-                    border-radius: 15px;
+                    border-radius: 10px;
                 }
             }
         }

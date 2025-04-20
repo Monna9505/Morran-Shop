@@ -43,9 +43,6 @@ $(document).ready(function() {
                             $('#response__message').text(resp.data);
                             form.reset();
                         }
-                        // setTimeout(function() {
-                        //     window.location.href = "/thank-you?lcl-contacted=true";
-                        // }, 2000);
                     },
                     error: function(errorThrown) {
                         

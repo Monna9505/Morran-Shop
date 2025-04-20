@@ -15,4 +15,6 @@ jQuery(function($) {
     //=include includes/contact-form.js
     //=include includes/scroll-to-section.js
     //=include includes/categories-slider.js
+    //=include includes/single-product.js
+    //=include includes/click-boxes-animate-text.js
 });

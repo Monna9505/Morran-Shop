@@ -1,6 +1,6 @@
 footer {
     padding: 35px 0;
-    background: linear-gradient(180deg, $morran-yellow, rgba(0, 0, 0, 0.70));
+    background-color: $black;
     @media screen and (max-width: breakpoints(lg)) {
         padding: 20px 0;
     }
@@ -46,6 +46,7 @@ footer {
             padding: 0 15px 0 0;
             .categories__title {
                 font-weight: 600;
+                color: $morran-yellow;
                 margin-bottom: 20px;
                 @media screen and (max-width: breakpoints(lg)) {
                     margin-bottom: 10px;
@@ -73,6 +74,7 @@ footer {
             padding: 0 15px 0 0;
             .contacts__title {
                 font-weight: 600;
+                color: $morran-yellow;
                 margin-bottom: 20px;
                 @media screen and (max-width: breakpoints(lg)) {
                     margin-bottom: 10px;
@@ -107,6 +109,7 @@ footer {
             padding: 0 15px 0 0;
             .social__links__text {
                 font-weight: 600;
+                color: $morran-yellow;
                 margin-bottom: 20px;
                 @media screen and (max-width: breakpoints(lg)) {
                     margin-bottom: 10px;
@@ -132,7 +135,7 @@ footer {
     }
     .footer__privacy__texts {
         text-align: center;
-        border-top: 1px solid $black;
+        border-top: 1px solid $white;
         padding: 20px 0 0 0;
         @media screen and (max-width: breakpoints(lg)) {
             padding: 15px 0 0 0;

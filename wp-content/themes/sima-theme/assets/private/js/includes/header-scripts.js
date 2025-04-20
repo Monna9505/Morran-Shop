@@ -15,8 +15,18 @@ $(document).ready(function() {
 
     $('.sublinks').hide();
 
-    // Show/hide search bar on 'click'
-    $('#search-bar').hide();
+    $(".wrap .fa-search").click(function() {
+        $(".wrap, .wrap .input").toggleClass("active");
+        $(".wrap input[type='text']").focus();
+    });
+
+    // Close the search bar when clicking outside of it
+    $(document).click(function(event) {
+        // Check if the click target is outside the search bar
+        if (!$(event.target).closest(".wrap").length) {
+            $(".wrap, .wrap .input").removeClass("active");
+        }
+    });
 
     if ($(window).width() > 991) {
         // Show/hide languages on hover

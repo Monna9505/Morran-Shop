@@ -39,6 +39,5 @@ if (!empty($main_menu_links) && is_iterable($main_menu_links)) { ?>
                 <?php } ?>
             </div>
         <?php } ?>
-        <?php include(locate_template('components/shared/header-languages.php')); ?>
     </div>
 <?php } ?>

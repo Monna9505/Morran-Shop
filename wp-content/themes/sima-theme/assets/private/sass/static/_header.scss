@@ -6,7 +6,10 @@ header {
         position: fixed;
         top: 0;
         width: 100%;
-        background: linear-gradient(0, $morran-yellow, $white);
+        background-color: $black;
+        @media screen and (max-width: 991px) {
+            border-bottom: 1px solid $white;
+        }
     }
 }
 .mobile__header {

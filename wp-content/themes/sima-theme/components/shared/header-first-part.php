@@ -5,7 +5,6 @@
 $header_logo = get_field('header_logo', 'option') ?: false;
 ?>
 <div class="header__first__part standard-grid">
-    <?php include(locate_template('components/shared/header-languages.php')); ?>
     <?php if (!empty($header_logo['url'])) { 
         $alt = !empty($header_logo['alt']) ?: false;
         ?>
@@ -32,10 +31,9 @@ $header_logo = get_field('header_logo', 'option') ?: false;
             </div>
         </div>
         <?php include(locate_template('components/shared/mobile-header.php')); ?>
-        <div class="search standard-grid">
-            <i class="fas fa-search"></i>
+        <div class="desktop-searchbar">
+            <?php include(locate_template('components/shared/search-bar.php')); ?>
         </div>
-        <?php include(locate_template('components/shared/search-bar.php')); ?>
         <a href="<?php echo wc_get_cart_url(); ?>" class="cart" title="<?php _e( 'View your shopping cart' ); ?>">
             <span class="cart__icon">
                 <i class="fa-solid fa-cart-shopping"></i>

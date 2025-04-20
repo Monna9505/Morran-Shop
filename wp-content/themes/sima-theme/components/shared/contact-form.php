@@ -20,7 +20,7 @@
                     <textarea name="message" id="message" placeholder="Message"></textarea>
                 </div>
                 <div class="send">
-                    <input class="secondary-button" id="submit" type="submit">
+                    <input class="main-button" id="submit" type="submit">
                 </div>
                 <div id="response__message"></div>
             </form>

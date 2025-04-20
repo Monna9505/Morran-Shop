@@ -60,7 +60,7 @@ $shop_query = new WP_Query($product_args);
                 <?php if ($shop_query->have_posts()) { ?>
                     <?php while ($shop_query->have_posts()) {
                         $shop_query->the_post(); 
-                        $product_image = wp_get_attachment_image_src(get_post_thumbnail_id())[0] ?: false;
+                        $product_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full')[0] ?: false;
                         $product_short_descr = wp_trim_words(get_the_excerpt(), 10, '...') ?: false;
                         ?>
                         <div class="product standard-grid">
@@ -81,7 +81,7 @@ $shop_query = new WP_Query($product_args);
                                 </p>
                                 <div class="product__buttons">
                                     <div class="view__product__button">
-                                        <a href="<?php the_permalink(); ?>" class="secondary-button">
+                                        <a href="<?php the_permalink(); ?>" class="main-button">
                                             <?php echo __('View Product', 'sima-theme'); ?>
                                         </a>
                                     </div>

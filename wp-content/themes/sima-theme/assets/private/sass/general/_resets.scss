@@ -15,6 +15,10 @@
     }
 }
 
+.animated {
+    animation: slideInLeft 3s ease-in-out;
+}
+
 img {
     height: auto;
     max-width: 100%;
@@ -49,8 +53,8 @@ h1 {
         line-height: 42px;
     }
     @media screen and (max-width: breakpoints(md)) {
-        font-size: 32px;
-        line-height: 35px;
+        font-size: 28px;
+        line-height: 32px;
     }
 }
 
@@ -112,7 +116,7 @@ h6 {
 }
 
 p, span, li, input::placeholder {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 22px;
     font-weight: 400;
     @media screen and (max-width: breakpoints(xl)) {
@@ -160,8 +164,7 @@ a {
     flex-wrap: wrap;
 }
 
-.main-button,
-.secondary-button {
+.main-button {
     cursor: pointer;
     font-size: 16px;
     line-height: 22px;
@@ -176,25 +179,13 @@ a {
 }
 
 .main-button {
-    text-transform: uppercase;
-    color: $black;
-    background: linear-gradient(217deg, rgba($morran-yellow, .8), rgba($black, 0.5) 70.71%);
-    @include smooth-transition;
-    &:hover {
-        color: $white;
-        background-color: $black;
-    }
-}
-
-.secondary-button {
     background-color: $morran-yellow;
     border-color: $morran-yellow;
     color: $white;
     @include smooth-transition;
     &:hover {
-        color: $black;
-        background-color: $white;
-        border-color: $white;
+        background-color: $black;
+        border-color: $black;
     }
 }
 

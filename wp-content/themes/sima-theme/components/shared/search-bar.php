@@ -4,9 +4,9 @@
  */
 ?>
 
-<form action="/<?php the_search_query(); ?>" method="get" id="search-bar">
-    <div class="container">
-        <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="<?php echo __('Search Product', 'sima-theme'); ?>">
-        <input class="secondary-button" type="submit" id="submit-search">
+<form action="/<?php the_search_query(); ?>" method="get" id="morran-search-bar">
+    <div class="wrap">
+        <input type="text" class="input" name="s" value="<?php the_search_query(); ?>" placeholder="<?php echo __('Search Product', 'sima-theme'); ?>">
+        <i class="fas fa-search"></i>
     </div>
 </form>

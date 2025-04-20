@@ -18,17 +18,17 @@ include(locate_template('components/shared/header.php'));
         <div class="poduct__wrapper standard-grid">
             <div class="product__images">
                 <?php if (!empty($product_image[0])) { ?>
-                    <div class="product__main__image">
+                    <a href="<?php echo the_post_thumbnail_url(); ?>" class="product__main__image" data-lightbox="product-gallery">
                         <img src="<?php echo esc_url($product_image[0]); ?>" alt="">
-                    </div>
+                    </a>
                 <?php } ?>
                 <?php if (!empty($gallery_images)) { ?>
-                    <div class="product__gallery standard-grid">
+                    <div class="product__gallery standard-grid" id="gallery_images">
                         <?php foreach ($gallery_images as $image_id) { 
-                            $image_url = wp_get_attachment_image_url($image_id, 'full'); ?>
-                            <div class="gallery__item">
+                            $image_url = wp_get_attachment_url($image_id); ?>
+                            <a href="<?php echo esc_url($image_url); ?>" class="gallery__item" data-lightbox="product-gallery">
                                 <img src="<?php echo esc_url($image_url); ?>" alt="Product Gallery Image">
-                            </div>
+                            </a>
                         <?php } ?>
                     </div>
                 <?php } ?>
@@ -37,9 +37,14 @@ include(locate_template('components/shared/header.php'));
                 <h3 class="product__title"><?php echo esc_html($product_title); ?></h3>
                 <div class="product__descr">
                     <?php if (!empty($product_content)) { ?>
-                        <div class="descr"><?php echo wp_kses_post($product_content); ?></div>
+                        <div class="descr"><p><?php echo wp_kses_post($product_content); ?></p></div>
                     <?php } ?>
                 </div>
+                <?php if (!empty($product->price)) { ?>
+                    <div class="price">
+                        <p><?php echo __('Price', 'sima-theme') . ': ' . $product->price . ' ' . get_woocommerce_currency_symbol(); ?></p>
+                    </div>
+                <?php } ?>
                 <div class="quantity-wrapper">
                     <button type="button" class="minus">-</button>
                     <?php

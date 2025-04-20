@@ -1,5 +1,5 @@
 // Site font
-$montserrat: "Montserrat", sans-serif;
+$josefin: "Josefin Sans", sans-serif;
 
 // Site colors
 $morran-yellow: #EBAB12;
@@ -32,4 +32,15 @@ $breakpoints:(
 
 @function breakpoints($size) {
     @return map-get($breakpoints, $size);
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px); /* Start off-screen to the left */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* End at the original position */
+    }
 }
