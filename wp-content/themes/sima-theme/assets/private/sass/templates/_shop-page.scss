@@ -1,6 +1,8 @@
 .shop-page {
     margin: 200px 0 50px 0;
     .shop__categories {
+        flex-wrap: nowrap;
+        gap: 10px;
         text-align: center;
         margin-bottom: 70px;
         @media screen and (max-width: breakpoints(lg)) {

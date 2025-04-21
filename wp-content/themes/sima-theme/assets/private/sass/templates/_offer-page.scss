@@ -3,6 +3,12 @@
     @media screen and (max-width: breakpoints(lg)) {
         margin: 80px 0 50px 0;
     }
+    .woocommerce {
+        .remove:hover {
+            color: unset !important;
+            background: unset !important;
+        }
+    }
     &.empty__cart {
         h1 {
             margin-bottom: 25px;
@@ -32,7 +38,7 @@
             a {
                 text-transform: uppercase;
                 color: $black;
-                background: linear-gradient(217deg, rgba($morran-yellow, .8), rgba($black, 0.5) 70.71%);
+                background-color: $morran-yellow;
                 @include smooth-transition;
                 &:hover {
                     color: $white;
@@ -46,7 +52,21 @@
         margin-bottom: 40px;
     }
     .woocommerce-cart-form {
-        table {
+        .shop_table {
+            border: none;
+            thead {
+                th.product-name,
+                th.product-thumbnail,
+                th.product-price,
+                th.product-quantity,
+                th.product-subtotal,
+                th.product-remove {
+                    font-size: 22px;
+                    font-weight: 700;
+                    color: $morran-yellow;
+                    text-decoration: underline;
+                }
+            }
             tbody {
                 .woocommerce-cart-form__cart-item {
                     .product-thumbnail {
@@ -56,9 +76,29 @@
                         }
                         a {
                             img {
-                                width: 100px;
+                                width: 90px;
+                                height: 70px;
+                                border-radius: 3px;
                             }
                         }
+                    }
+                    .product-quantity {
+                        .quantity {
+                            .qty {
+                                font-size: 18px;
+                                font-weight: 700;
+                                border: none;
+                                background: transparent;
+                            }
+                        }
+                    }
+                    .product-name,
+                    .product-thumbnail,
+                    .product-price,
+                    .product-quantity,
+                    .product-subtotal,
+                    .product-remove {
+                        border: none;
                     }
                     .product-name {
                         a {
@@ -68,6 +108,7 @@
                     }
                 }
                 .actions {
+                    border: none;
                     button[name="update_cart"] {
                         background-color: $morran-yellow;
                         border-color: $morran-yellow;
@@ -77,6 +118,42 @@
                             color: $white;
                             background-color: $black;
                             border-color: $black;
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: breakpoints(md)) {
+            .shop_table_responsive {
+                tbody {
+                    tr {
+                        margin-bottom: 20px;
+                        td {
+                            text-align: center !important;
+                            padding-bottom: 0;
+                            a {
+                                margin-left: 5px;
+                            }
+                        }
+                        td::before {
+                            font-size: 18px;
+                            float: none;
+                            color: $morran-yellow;
+                        }
+                        .product-thumbnail::before {
+                            content: none;
+                        }
+                        .product-price {
+                            .woocommerce-Price-amount {
+                                bdi {
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+                        .product-quantity {
+                            .quantity {
+                                display: inline;
+                            }
                         }
                     }
                 }
