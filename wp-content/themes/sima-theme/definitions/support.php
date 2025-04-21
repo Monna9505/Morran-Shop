@@ -60,14 +60,12 @@ function generate_modules($modules)
 /**
  * Adding SVG support
  */
-
-function morran_shop_svg_support( $mimes = array() ) {
-	
-	$mimes['svg']  = 'image/svg';
-	$mimes['svgz'] = 'image/svg';
-	return $mimes;
+function allow_svg_upload($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
 }
-add_filter( 'upload_mimes', 'morran_shop_svg_support' ); 
+add_filter('upload_mimes', 'allow_svg_upload');
+
 
 /**
  * Adding Featured Image support to the theme

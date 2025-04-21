@@ -8,18 +8,22 @@
     }
     .poduct__wrapper {
         flex-wrap: nowrap;
+        gap: 10px;
         margin-bottom: 100px;
         @media screen and (max-width: breakpoints(lg)) {
             flex-direction: column;
         }
         .product__images {
-            flex-basis: calc(50% - 20px);
+            width: 50%;
+            @media screen and (max-width: breakpoints(lg)) {
+                width: 100%;
+            }
             .product__main__image {
                 display: block;
                 height: 500px;
                 margin-bottom: 30px;
                 @media screen and (max-width: 575px) {
-                    height: 350px;
+                    height: 280px;
                 }
                 img {
                     width: 100%;
@@ -35,27 +39,38 @@
             .product__gallery {
                 justify-content: left;
                 gap: 10px;
-                .gallery__item {
-                    height: 90px;
-                    cursor: pointer;
-                    flex-basis: calc(15% - 10px);
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                        border-radius: 5px;
+                .slick-list {
+                    .slick-track {
+                        margin: 0 auto 0 0;
+                        .slick-slide {
+                            flex-basis: calc(15% - 10px);
+                            cursor: pointer;
+                            margin-right: 5px;
+                            &:last-child {
+                                margin-right: 0;
+                            }
+                            .gallery__item {
+                                height: 85px;
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 5px;
+                                }
+                            }
+                        }
                     }
                 }
             }
         }
         .product__content {
-            flex-basis: calc(45% - 20px);
-            @media screen and (max-width: 991px) {
-                margin-top: 50px;
+            width: 45%;
+            @media screen and (max-width: breakpoints(lg)) {
+                width: 100%;
+                margin-top: 30px;
             }
             .product__title {
-                margin-bottom: 25px;
-                @media screen and (max-width: 768px) {
+                margin-bottom: 20px;
+                @media screen and (max-width: breakpoints(md)) {
                     margin-bottom: 10px;
                 }
             }
@@ -63,7 +78,7 @@
                 margin-bottom: 35px;
             }
             .price {
-                margin-bottom: 35px;
+                margin-bottom: 25px;
                 p {
                     font-size: 23px;
                     font-weight: 600;
@@ -72,19 +87,20 @@
             }
             .quantity-wrapper {
                 display: flex;
-                margin-bottom: 40px;
+                margin-bottom: 30px;
                 .minus,
                 .plus {
-                    font-size: 30px;
+                    height: 20%;
+                    font-size: 20px;
                     background-color: $black;
                     color: $white;
                     border: none;
                 }
                 .quantity {
                     .qty {
-                        width: 80px;
-                        height: 100%;
-                        font-size: 20px;
+                        width: 40px;
+                        height: 60%;
+                        font-size: 16px;
                         font-weight: 600;
                         text-align: center;
                         color: $black;
@@ -134,10 +150,11 @@
                             }
                         }
                     }
-                    .add_to_cart_button {
+                    .add_to_cart_button,
+                    a.button.product_type_simple {
                         text-transform: uppercase;
                         color: $black;
-                        background: linear-gradient(217deg, rgba($morran-yellow, .8), rgba($black, 0.5) 70.71%);
+                        background-color: $morran-yellow;
                         @include smooth-transition;
                         &:hover {
                             color: $white;

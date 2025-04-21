@@ -22,19 +22,15 @@ $sku_results_search_query = new WP_Query(
 );
 wp_reset_postdata();
 
-// Query to search products by title and keywords
+// Query to search products by title
 add_filter('posts_where', function ($where, $wp_query) use ($search) {
     global $wpdb;
     if ($search && $wp_query->query['post_type'] === 'product') {
         // Match against title, content, or excerpt
         $where .= $wpdb->prepare(
             " AND (
-                {$wpdb->posts}.post_title LIKE %s OR 
-                {$wpdb->posts}.post_content LIKE %s OR 
-                {$wpdb->posts}.post_excerpt LIKE %s
+                {$wpdb->posts}.post_title LIKE %s
             )",
-            '%' . $wpdb->esc_like($search) . '%',
-            '%' . $wpdb->esc_like($search) . '%',
             '%' . $wpdb->esc_like($search) . '%'
         );
     }

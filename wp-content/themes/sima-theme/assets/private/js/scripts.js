@@ -17,4 +17,5 @@ jQuery(function($) {
     //=include includes/categories-slider.js
     //=include includes/single-product.js
     //=include includes/click-boxes-animate-text.js
+    //=include includes/woo-checkout.js
 });

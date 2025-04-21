@@ -24,7 +24,7 @@ $shop_query = new WP_Query($product_args);
 ?>
 <div class="shop-page">
     <div class="container">
-        <?php if (!empty($categories)) { ?>
+        <?php if (!empty($categories) && !is_wp_error($categories)) { ?>
             <div class="shop__categories standard-grid">
                 <?php foreach ($categories as $category) { 
                     $thumbnail_id = get_term_meta($category->term_id, 'thumbnail_id', true);
