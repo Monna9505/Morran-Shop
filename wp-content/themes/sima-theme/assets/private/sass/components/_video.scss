@@ -1,0 +1,28 @@
+.video {
+    margin-bottom: 70px;
+    @media screen and (max-width: breakpoints(lg)) {
+        margin-bottom: 50px;
+    }
+    .content {
+        @media screen and (max-width: breakpoints(md)) {
+            flex-direction: column-reverse;
+        }
+        .video__wrapper {
+            width: calc(60% - 20px);
+            @media screen and (max-width: breakpoints(md)) {
+                width: 100%;
+            }
+            video {
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+            }
+        }
+        .animated__text {
+            width: calc(40% - 20px);
+            @media screen and (max-width: breakpoints(md)) {
+                width: 100%;
+            }
+        }
+    }
+}

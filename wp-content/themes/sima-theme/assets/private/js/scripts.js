@@ -19,4 +19,5 @@ jQuery(function($) {
     //=include includes/click-boxes-animate-text.js
     //=include includes/woo-checkout.js
     //=include includes/gallery-infinate-scroll.js
+    //=include includes/animated-text.js
 });
