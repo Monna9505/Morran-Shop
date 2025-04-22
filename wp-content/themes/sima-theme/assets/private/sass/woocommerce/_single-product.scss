@@ -3,9 +3,6 @@
     @media screen and (max-width: breakpoints(lg)) {
         margin: 120px 0 50px 0;
     }
-    @media screen and (max-width: breakpoints(md)) {
-        margin-top: 60px;
-    }
     .poduct__wrapper {
         flex-wrap: nowrap;
         gap: 10px;
@@ -117,6 +114,9 @@
             h2 {
                 text-align: center;
                 margin-bottom: 40px;
+                @media screen and (max-width: breakpoints(lg)) {
+                    margin-bottom: 20px;
+                }
             }
             ul.products {
                 display: flex;
