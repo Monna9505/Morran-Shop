@@ -10,6 +10,8 @@ $product_content = $product->get_description();
 $product_image = wp_get_attachment_image_src(get_post_thumbnail_id($product_id), 'single-post-thumbnail') ?: false;
 $gallery_images = $product->get_gallery_image_ids() ?: false;
 $add_to_cart_url = wc_get_checkout_url() . '?add-to-cart=' . $product_id;
+$product_color = $product->get_attribute('pa_color');
+$product_size = $product->get_attribute('pa_size');
 
 include(locate_template('components/shared/header.php'));
 ?>
@@ -45,6 +47,16 @@ include(locate_template('components/shared/header.php'));
                         <p><?php echo __('Price', 'sima-theme') . ': ' . $product->price . ' ' . get_woocommerce_currency_symbol(); ?></p>
                     </div>
                 <?php } ?>
+                <?php if (!empty($product_color)) { ?>
+                    <div class="product_color">
+                        <p><?php echo __('Color: ' . $product_color, 'sima-theme'); ?></p>
+                    </div>
+                <?php } ?>
+                <?php if (!empty($product_size)) { ?>
+                    <div class="product_size">
+                        <p><?php echo __('Size: ' . $product_size, 'sima-theme'); ?></p>
+                    </div>
+                <?php } ?>
                 <div class="quantity-wrapper">
                     <button type="button" class="minus">-</button>
                     <?php
@@ -68,6 +80,7 @@ include(locate_template('components/shared/header.php'));
                 <?php woocommerce_output_related_products([
                     'posts_per_page' => 3,
                     'columns'        => 3,
+                    'image_size'     => 'full'
                 ]); ?>
             </div>
         <?php } ?>
