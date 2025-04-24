@@ -44,3 +44,14 @@ $breakpoints:(
         transform: translateX(0); /* End at the original position */
     }
 }
+
+@keyframes showTextFromLeft {
+    from {
+        opacity: 0; 
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}

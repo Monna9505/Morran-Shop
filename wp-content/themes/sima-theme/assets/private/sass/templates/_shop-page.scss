@@ -1,7 +1,7 @@
 .shop-page {
-    margin: 200px 0 50px 0;
+    margin: 70px 0 50px 0;
     @media screen and (max-width: breakpoints(lg)) {
-        margin: 120px 0 50px 0;
+        margin: 50px 0;
     }
     .shop__categories {
         flex-wrap: nowrap;
@@ -139,6 +139,10 @@
         }
         .pagination {
             text-align: center;
+            margin-top: 40px;
+            @media screen and (max-width: breakpoints(lg)) {
+                margin-top: 20px;
+            }
             .page-numbers {
                 width: 35px;
                 height: 35px;
