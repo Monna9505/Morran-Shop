@@ -4,6 +4,7 @@
  */
 
 include(locate_template('components/shared/header.php'));
+include(locate_template('template-parts/shop-hero.php'));
 
 // Get the selected category from the URL (if any)
 $selected_category_slug = isset($_GET['category']) ? $_GET['category'] : null;
