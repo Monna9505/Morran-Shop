@@ -75,11 +75,19 @@
                 margin-bottom: 35px;
             }
             .price {
-                margin-bottom: 25px;
+                margin-bottom: 15px;
                 p {
-                    font-size: 23px;
+                    font-size: 18px;
                     font-weight: 600;
                     color: $morran-yellow;
+                }
+            }
+            .product_color,
+            .product_size {
+                margin-bottom: 15px;
+                p {
+                    font-size: 18px;
+                    font-weight: 600;
                 }
             }
             .quantity-wrapper {
@@ -122,12 +130,20 @@
                 display: flex;
                 justify-content: center;
                 gap: 20px;
+                @media screen and (max-width: breakpoints(lg)) {
+                    flex-wrap: wrap;
+                    gap: 10px;
+                }
                 @media screen and (max-width: breakpoints(sm)) {
                     flex-direction: column;
                 }
                 li.product {
                     width: 33%;
                     margin: 0;
+                    @media screen and (max-width: breakpoints(lg)) {
+                        width: calc(50% - 10px);
+                        margin-bottom: 30px;
+                    }
                     @media screen and (max-width: breakpoints(sm)) {
                         width: 100%;
                     }
