@@ -10,9 +10,9 @@ if (!empty($main_menu_links) && is_iterable($main_menu_links)) { ?>
             <div class="main__link">
                 <?php if (isset($main_link['main_link']['url']) && !empty($main_link['main_link']['url'])) { 
                     $target = (isset($main_link['main_link']['target']) && !empty($main_link['main_link']['target'])) ? $main_link['main_link']['target'] : '';
-                    $title = (isset($main_link['main_link']['title']) && !empty($main_link['main_link']['title'])) ? $main_link['main_link']['title'] : __('No title', 'sima-theme');
+                    $title = (isset($main_link['main_link']['title']) && !empty($main_link['main_link']['title'])) ? $main_link['main_link']['title'] : __('Morran Main link Title', 'sima-theme');
                     ?>
-                    <a href="<?php echo $main_link['main_link']['url']; ?>" target="<?php echo $target; ?>" class="main-menu-link">
+                    <a href="<?php echo $main_link['main_link']['url']; ?>" target="<?php echo $target; ?>" class="main-menu-link" title="<?php echo $title; ?>">
                         <?php echo $title; ?>
                     </a>
                 <?php } ?>
@@ -20,17 +20,22 @@ if (!empty($main_menu_links) && is_iterable($main_menu_links)) { ?>
                     <?php if (isset($main_link['sublinks']) && !empty($main_link['sublinks']) && is_iterable($main_link['sublinks'])) { ?>
                         <div class="sublinks">
                             <?php foreach ($main_link['sublinks'] as $sublink) { ?>
-                                <?php if (isset($sublink['sublink']['url']) && !empty($sublink['sublink']['url'])) { ?>
+                                <?php if (isset($sublink['sublink']['url']) && !empty($sublink['sublink']['url'])) { 
+                                    $title = (isset($sublink['sublink']['title']) && !empty($sublink['sublink']['title'])) ? $sublink['sublink']['title'] : 'Morran Sublink Title';
+                                    ?>
                                     <div class="link">
-                                        <a href="<?php echo $sublink['sublink']['url']; ?>" class="sublink"><?php echo $sublink['sublink']['title']; ?></a>
+                                        <a href="<?php echo $sublink['sublink']['url']; ?>" class="sublink" title="<?php echo $title; ?>"><?php echo $title; ?></a>
                                     </div>
                                 <?php } ?>
                                 <?php if (isset($sublink['image_for_sublink']['url']) && !empty($sublink['image_for_sublink']['url'])) { 
-                                    $alt = !empty($sublink['image_for_sublink']['alt']) ? $sublink['image_for_sublink']['alt'] : '';
+                                    $alt = !empty($sublink['image_for_sublink']['alt']) ? $sublink['image_for_sublink']['alt'] : 'Morran Sublink Image';
                                     ?>
                                     <div class="image__sublink">
                                         <p class="image__title"><?php echo $sublink['image_for_sublink']['title']; ?></p>
-                                        <img src="<?php echo $sublink['image_for_sublink']['url']; ?>" alt="<?php echo $alt; ?>" class="img_for_sublink">
+                                        <img src="<?php echo $sublink['image_for_sublink']['url']; ?>" 
+                                             alt="<?php echo $alt; ?>" 
+                                             class="img_for_sublink"
+                                             loading="lazy">
                                     </div>
                                 <?php } ?>
                             <?php } ?>

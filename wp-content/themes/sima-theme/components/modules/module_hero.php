@@ -10,7 +10,7 @@ $hero_image_hero_slider = (isset($module['hero_image_hero_slider'])) ? $module['
 $hero_slider = (isset($module['hero_slider'])) ? $module['hero_slider'] : false;
 $hero_image = (isset($module['hero_image'])) ? $module['hero_image'] : false;
 ?>
-<div class="hero">
+<section class="hero">
     <?php if (!empty($hero_image_hero_slider) && $hero_image_hero_slider == 'hero-slider') { ?>
         <?php if (!empty($hero_slider)  && is_array($hero_slider)) { ?>
             <div class="hero__slider">
@@ -31,10 +31,12 @@ $hero_image = (isset($module['hero_image'])) ? $module['hero_image'] : false;
                                             <div class="slide__description"><?php echo $slide['slide_description']; ?></div>
                                         <?php } ?>
                                     </div>
-                                    <?php if (isset($slide['slide_link']['url']) && !empty($slide['slide_link']['url'])) { ?>
+                                    <?php if (isset($slide['slide_link']['url']) && !empty($slide['slide_link']['url'])) { 
+                                        $title = (isset($slide['slide_link']['title']) && !empty($slide['slide_link']['title'])) ? $slide['slide_link']['title'] : 'Morran Slide';
+                                        ?>
                                         <div class="slide__button">
-                                            <a href="<?php echo $slide['slide_link']['url']; ?>" class="main-button">
-                                                <?php echo $slide['slide_link']['title']; ?>
+                                            <a href="<?php echo $slide['slide_link']['url']; ?>" class="main-button" title="<?php echo $title; ?>">
+                                                <?php echo $title; ?>
                                             </a>
                                         </div>
                                     <?php } ?>
@@ -44,7 +46,7 @@ $hero_image = (isset($module['hero_image'])) ? $module['hero_image'] : false;
                                 $alt = (isset($slide['slide_image']['alt']) && !empty($slide['slide_image']['alt'])) ? $slide['slide_image']['alt'] : __('Slide Image', 'sima-theme');
                                 ?>
                                 <div class="slide__img">
-                                    <img src="<?php echo $slide['slide_image']['url']; ?>" alt="<?php echo $alt; ?>">
+                                    <img src="<?php echo $slide['slide_image']['url']; ?>" alt="<?php echo $alt; ?>" loading="lazy">
                                 </div>
                             <?php } ?>
                         </div>
@@ -62,13 +64,15 @@ $hero_image = (isset($module['hero_image'])) ? $module['hero_image'] : false;
                     <?php if (isset($hero_image['hero_title']) && !empty($hero_image['hero_title'])) { ?>
                         <h1 class="hero__title"><?php echo $hero_image['hero_title']; ?></h1>
                     <?php } ?>
-                    <?php if (isset($hero_image['hero_link']['url']) && !empty($hero_image['hero_link']['url'] )) { ?>
-                        <a href="<?php echo $hero_image['hero_link']['url']; ?>" class="main-button">
-                            <?php echo $hero_image['hero_link']['title']; ?>
+                    <?php if (isset($hero_image['hero_link']['url']) && !empty($hero_image['hero_link']['url'] )) { 
+                        $title = (isset($hero_image['hero_link']['title']) && !empty($hero_image['hero_link']['title'])) ? $hero_image['hero_link']['title'] : 'Morran Hero Title';
+                        ?>
+                        <a href="<?php echo $hero_image['hero_link']['url']; ?>" class="main-button" title="<?php echo $title; ?>">
+                            <?php echo $title; ?>
                         </a>
                     <?php } ?>
                 </div>
             </div>
         </div>
     <?php } ?>
-</div>
+</section>

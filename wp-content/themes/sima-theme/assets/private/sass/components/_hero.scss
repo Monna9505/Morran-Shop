@@ -8,9 +8,9 @@
     }
     .hero__slider {
         border-bottom: 2px solid $morran-yellow;
-        margin: 200px 0 350px 0;
+        margin: 200px 0 250px 0;
         @media screen and (max-width: breakpoints(xl)) {
-            margin: 200px 0 300px 0;
+            margin: 170px 0 170px 0;
         }
         @media screen and (max-width: breakpoints(lg)) {
             margin: 35px 0 100px 0;
@@ -102,20 +102,20 @@
                             position: absolute;
                             left: 50%;
                             transform: translateX(-50%);
-                            width: 85%;
+                            width: 95%;
                             height: 600px;
                             margin: 0 auto;
                             @media screen and (max-width: breakpoints(xl)) {
                                 height: 400px;
                             }
                             @media screen and (max-width: breakpoints(lg)) {
-                                width: 70%;
                                 height: 300px;
                             }
                             @media screen and (max-width: breakpoints(md)) {
                                 height: 250px;
                             }
                             @media screen and (max-width: breakpoints(sm)) {
+                                width: 90%;
                                 height: 190px;
                             }
                             img {

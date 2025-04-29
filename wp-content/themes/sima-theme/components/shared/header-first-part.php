@@ -6,10 +6,10 @@ $header_logo = get_field('header_logo', 'option') ?: false;
 ?>
 <div class="header__first__part standard-grid">
     <?php if (!empty($header_logo['url'])) { 
-        $alt = !empty($header_logo['alt']) ?: false;
+        $alt = (isset($header_logo['alt']) && !empty($header_logo['alt'])) ? $header_logo['alt'] : 'Morran Studio Logo';
         ?>
-        <a href="/" class="header__logo">
-            <img src="<?php echo $header_logo['url']; ?>" alt="<?php echo $alt ? $alt : 'Morran Logo'; ?>">
+        <a href="/" class="header__logo" title="Morran Studio Logo">
+            <img src="<?php echo $header_logo['url']; ?>" alt="<?php echo $alt; ?>" loading="lazy">
         </a>
     <?php } ?>
     <div class="search__favourites__cart standard-grid">

@@ -11,7 +11,7 @@ $dtc_description = (isset($module['dtc_description'])) ? $module['dtc_descriptio
 $two_columns = (isset($module['two_columns'])) ? $module['two_columns'] : false;
 ?>
 
-<div class="two__columns" <?php echo !empty($tc_section_id) ? 'id=' . $tc_section_id : ''; ?>>
+<section class="two__columns" <?php echo !empty($tc_section_id) ? 'id=' . $tc_section_id : ''; ?>>
     <div class="container titles">
         <?php if (!empty($dtc_title)) { ?>
             <h2 class="dtc__title"><?php echo $dtc_title; ?></h2>
@@ -28,7 +28,9 @@ $two_columns = (isset($module['two_columns'])) ? $module['two_columns'] : false;
                 <div class="columns__content standard-grid">
                     <div class="first__column">
                         <div class="col-img">
-                            <img src="<?php echo get_stylesheet_directory_uri() . '/assets/pics/img/Morran-Belt.png' ?>" alt="Morran Bag">
+                            <img src="<?php echo get_stylesheet_directory_uri() . '/assets/pics/img/Morran-Belt.png' ?>" 
+                                 alt="Morran Bag"
+                                 loading="lazy">
                         </div>
                         <div class="col-content">
                             <?php if (isset($two_columns['title']) && !empty($two_columns['title'])) { ?>
@@ -80,4 +82,4 @@ $two_columns = (isset($module['two_columns'])) ? $module['two_columns'] : false;
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.8762131141484!2d-0.0638748066303099!3d51.53383023611747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761cdd3c6da561%3A0x75afb5f07feeb672!2sContainerville%20Corbridge%20Cresent!5e0!3m2!1sen!2suk!4v1722778683141!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <?php } ?>
     </div>
-</div>
+</section>
