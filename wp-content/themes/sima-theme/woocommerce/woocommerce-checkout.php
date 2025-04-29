@@ -124,3 +124,8 @@ add_filter( 'woocommerce_order_button_text', 'orbis_custom_button_text' );
 function orbis_custom_button_text( $button_text ) {
     return __( 'Send offer request', 'sima-theme' );
 }
+
+/**
+* Disable payment methods
+*/
+add_filter( 'woocommerce_cart_needs_payment', '__return_false' );

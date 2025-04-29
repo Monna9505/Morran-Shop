@@ -11,8 +11,7 @@ $bitb_short_description = (isset($module['short_description'])) ? $module['short
 $bitb_big_image = (isset($module['big_image'])) ? $module['big_image'] : false;
 $bitb_blocks = (isset($module['blocks'])) ? $module['blocks'] : false;
 ?>
-
-<div class="big__image__three__blocks" <?php echo !empty($bitb_section_id) ? 'id=' . $bitb_section_id : ''; ?>>
+<section class="big__image__three__blocks" <?php echo !empty($bitb_section_id) ? 'id=' . $bitb_section_id : ''; ?>>
     <div class="container">
         <?php if (!empty($bitb_title)) { ?>
             <h2><?php echo $bitb_title; ?></h2>
@@ -26,4 +25,4 @@ $bitb_blocks = (isset($module['blocks'])) ? $module['blocks'] : false;
             
         <?php } ?>
     </div>
-</div>
+</section>

@@ -8,7 +8,7 @@ $faq_section_id = (isset($module['faq_section_id'])) ? $module['faq_section_id']
 $faq_title = (isset($module['faq_title'])) ? $module['faq_title'] : false;
 $faq = (isset($module['faq'])) ? $module['faq'] : false;
 ?>
-<div class="faq" <?php echo !empty($faq_section_id) ? 'id=' . $faq_section_id : ''; ?>>
+<section class="faq" <?php echo !empty($faq_section_id) ? 'id=' . $faq_section_id : ''; ?>>
     <div class="container">
         <?php if (!empty($faq_title)) { ?>
             <h2 class="faq__title"><?php echo $faq_title; ?></h2>
@@ -30,4 +30,4 @@ $faq = (isset($module['faq'])) ? $module['faq'] : false;
             </div>
         <?php } ?>
     </div>
-</div>
+</section>

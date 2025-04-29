@@ -6,7 +6,7 @@ if (!isset($module)) { return; }
 
 $video = (isset($module['video'])) ? $module['video'] : false;
 ?>
-<div class="video">
+<section class="video">
     <div class="container">
         <?php if (!empty($video)) { ?>
             <div class="content standard-grid">
@@ -41,4 +41,4 @@ $video = (isset($module['video'])) ? $module['video'] : false;
             </div>
         <?php } ?>
     </div>
-</div>
+</section>

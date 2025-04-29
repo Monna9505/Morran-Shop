@@ -11,8 +11,7 @@ $promo_short_description = (isset($module['promo_short_description'])) ? $module
 $promotinal_slider = (isset($module['promotinal_slider'])) ? $module['promotinal_slider'] : false;
 $p_cta_button = (isset($module['cta_button'])) ? $module['cta_button'] : false;
 ?>
-
-<div class="promotional__products" <?php echo !empty($pp_section_id) ? 'id=' . $pp_section_id : ''; ?>>
+<section class="promotional__products" <?php echo !empty($pp_section_id) ? 'id=' . $pp_section_id : ''; ?>>
     <div class="container">
         <div class="headings">
             <?php if (!empty($promotional_heading)) { ?>
@@ -32,7 +31,8 @@ $p_cta_button = (isset($module['cta_button'])) ? $module['cta_button'] : false;
                                 <?php if (isset($slide['image']['url']) && !empty($slide['image']['url'])) { ?>
                                     <div class="product__img">
                                         <img src="<?php echo $slide['image']['url']; ?>" 
-                                            alt="<?php echo $slide['image']['alt']; ?>">
+                                            alt="<?php echo $slide['image']['alt']; ?>"
+                                            loading="lazy">
                                     </div>
                                 <?php } ?>
                                 <?php if (isset($slide['title']) && !empty($slide['title'])) { ?>
@@ -49,4 +49,4 @@ $p_cta_button = (isset($module['cta_button'])) ? $module['cta_button'] : false;
             </div>
         <?php } ?>
     </div>
-</div>
+</section>

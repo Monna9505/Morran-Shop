@@ -14,7 +14,9 @@ $rights_reserved_text = get_field('rights_reserved_text', 'option') ?: false;
         <div class="footer__first__part standard-grid">
             <?php if (isset($footer_logo['url']) && !empty($footer_logo['url'])) { ?>
                 <a href="/" class="footer__logo">
-                    <img src="<?php echo $footer_logo['url']; ?>" alt="<?php echo $footer_logo['alt']; ?>">
+                    <img src="<?php echo $footer_logo['url']; ?>" 
+                         alt="<?php echo $footer_logo['alt']; ?>"
+                         loading="lazy">
                 </a>
             <?php } ?>
             <?php if (!empty($footer_main_links) && is_array($footer_main_links)) { ?>

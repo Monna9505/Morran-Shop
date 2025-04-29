@@ -71,3 +71,8 @@ add_filter('upload_mimes', 'allow_svg_upload');
  * Adding Featured Image support to the theme
  */
 add_theme_support( 'post-thumbnails' );
+
+/**
+ * Enable dynamic title tag support
+ */
+add_theme_support('title-tag');

@@ -9,7 +9,7 @@ $np_section_id = (isset($module['np_section_id'])) ? $module['np_section_id'] : 
 $new_products_title = (isset($module['new_products_title'])) ? $module['new_products_title'] : false;
 $new_products = (isset($module['new_products'])) ? $module['new_products'] : false;
 ?>
-<div class="new__products" <?php echo !empty($np_section_id) ? 'id=' . $np_section_id : ''; ?>>
+<section class="new__products" <?php echo !empty($np_section_id) ? 'id=' . $np_section_id : ''; ?>>
     <div class="container">
         <?php if (!empty($new_products_title)) { ?>
             <h2><?php echo $new_products_title; ?></h2>
@@ -17,11 +17,14 @@ $new_products = (isset($module['new_products'])) ? $module['new_products'] : fal
         <?php if (!empty($new_products) && is_iterable($new_products)) { ?>
             <div class="product__items standard-grid">
                 <div class="left__content">
-                    <?php foreach ($new_products as $key=>$new_arrival_left_img) { ?>
+                    <?php foreach ($new_products as $key=>$new_arrival_left_img) { 
+                        $alt = (isset($new_arrival_left_img['product_image']['alt']) && !empty($new_arrival_left_img['product_image']['alt'])) ? $new_arrival_left_img['product_image']['alt'] : 'Morran Image';
+                        ?>
                         <?php if (isset($new_arrival_left_img['product_image']['url']) && !empty($new_arrival_left_img['product_image']['url'])) { ?>
                             <div class="new__arrival-hidden-img" current-selection="current-hovered-<?php echo $key; ?>">
                                 <img src="<?php echo $new_arrival_left_img['product_image']['url']; ?>" 
-                                     alt="<?php echo $new_arrival_left_img['product_image']['alt']; ?>">
+                                     alt="<?php echo $alt; ?>"
+                                     loading="lazy">
                             </div>
                         <?php } ?>
                     <?php } ?>
@@ -30,7 +33,7 @@ $new_products = (isset($module['new_products'])) ? $module['new_products'] : fal
                     <?php foreach ($new_products as $key=>$new_arrival_descr) { ?>
                         <div class="new__arrival-hidden-descr" current-selection="current-hovered-<?php echo $key; ?>">
                             <?php if (isset($new_arrival_descr['product_title']) && !empty($new_arrival_descr['product_title'])) { ?>
-                                <h4 class="new__arrival__title"><?php echo $new_arrival_descr['product_title']; ?></h4>
+                                <h3 class="new__arrival__title"><?php echo $new_arrival_descr['product_title']; ?></h3>
                             <?php } ?>
                             <?php if (isset($new_arrival_descr['product_description']) && !empty($new_arrival_descr['product_description'])) { ?>
                                 <div class="new__arrival__descr"><?php echo $new_arrival_descr['product_description']; ?></div>
@@ -44,10 +47,13 @@ $new_products = (isset($module['new_products'])) ? $module['new_products'] : fal
                     <?php } ?>
                     <div class="image__grid standard-grid">
                         <?php foreach ($new_products as $key=>$new_arrival_images) { ?>
-                            <?php if (isset($new_arrival_images['product_image']['url']) && !empty($new_arrival_images['product_image']['url'])) { ?>
+                            <?php if (isset($new_arrival_images['product_image']['url']) && !empty($new_arrival_images['product_image']['url'])) { 
+                                $alt = (isset($new_arrival_images['product_image']['alt']) && !empty($new_arrival_images['product_image']['alt'])) ? $new_arrival_images['product_image']['alt'] : 'Morran Image';
+                                ?>
                                 <div class="new__arrival-image" current-selection="current-hovered-<?php echo $key; ?>">
                                     <img src="<?php echo $new_arrival_images['product_image']['url']; ?>" 
-                                         alt="<?php echo $new_arrival_images['product_image']['alt']; ?>">
+                                         alt="<?php echo $alt; ?>"
+                                         loading="lazy">
                                 </div>
                             <?php } ?>
                         <?php } ?>
@@ -56,4 +62,4 @@ $new_products = (isset($module['new_products'])) ? $module['new_products'] : fal
             </div>
         <?php } ?>
     </div>
-</div>
+</section>

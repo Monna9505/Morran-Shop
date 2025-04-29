@@ -3,6 +3,9 @@
     @media screen and (max-width: breakpoints(lg)) {
         margin: 120px 0 50px 0;
     }
+    @media screen and (max-width: breakpoints(md)) {
+        margin: 70px 0 50px 0;
+    }
     .woocommerce {
         .remove:hover {
             color: unset !important;
