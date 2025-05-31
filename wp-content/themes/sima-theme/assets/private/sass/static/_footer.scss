@@ -1,5 +1,5 @@
 footer {
-    padding: 35px 0;
+    padding: 35px 0 20px 0;
     background-color: $black;
     @media screen and (max-width: breakpoints(lg)) {
         padding: 20px 0;
@@ -17,9 +17,6 @@ footer {
         .footer__logo {
             display: block;
             max-width: 150px;
-            height: 100%;
-            background: $black;
-            border-radius: 3px;
             @media screen and (max-width: breakpoints(xl)) {
                 max-width: 130px;
             }
@@ -27,17 +24,18 @@ footer {
         .footer__main__links {
             padding: 0 15px 0 0;
             .footer_main_link {
-                margin-bottom: 20px;
+                margin-bottom: 10px;
                 @media screen and (max-width: breakpoints(lg)) {
-                    margin-bottom: 7px;
+                    margin-bottom: 5px;
                 }
                 a {
-                    font-size: 18px;
-                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 18px;
+                    font-weight: 400;
                     color: $white;
                     @media screen and (max-width: breakpoints(lg)) {
-                        font-size: 16px;
-                        line-height: 18px;
+                        font-size: 14px;
+                        line-height: 16px;
                     }
                 }
             }
@@ -45,26 +43,31 @@ footer {
         .categories__column {
             padding: 0 15px 0 0;
             .categories__title {
+                font-size: 20px;
+                line-height: 22px;
                 font-weight: 600;
                 color: $morran-yellow;
-                margin-bottom: 20px;
+                margin-bottom: 15px;
                 @media screen and (max-width: breakpoints(lg)) {
+                    font-size: 18px;
+                    line-height: 20px;
                     margin-bottom: 10px;
                 }
             }
             .categories {
                 .category__link {
-                    margin-bottom: 20px;
+                    margin-bottom: 10px;
                     @media screen and (max-width: breakpoints(lg)) {
-                        margin-bottom: 7px;
+                        margin-bottom: 5px;
                     }
                     a {
-                        font-size: 18px;
-                        font-weight: 600;
+                        font-size: 16px;
+                        line-height: 18px;
+                        font-weight: 400;
                         color: $white;
                         @media screen and (max-width: breakpoints(lg)) {
-                            font-size: 16px;
-                            line-height: 18px;
+                            font-size: 14px;
+                            line-height: 16px;
                         }
                     }
                 }
@@ -73,10 +76,14 @@ footer {
         .contacts__column {
             padding: 0 15px 0 0;
             .contacts__title {
+                font-size: 20px;
+                line-height: 22px;
                 font-weight: 600;
                 color: $morran-yellow;
-                margin-bottom: 20px;
+                margin-bottom: 15px;
                 @media screen and (max-width: breakpoints(lg)) {
+                    font-size: 18px;
+                    line-height: 20px;
                     margin-bottom: 10px;
                 }
             }
@@ -84,22 +91,24 @@ footer {
                 .email__field,
                 .telephone__field,
                 .address__field {
-                    font-size: 18px;
-                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 18px;
+                    font-weight: 400;
                     color: $white;
                     margin-bottom: 10px;
                     @media screen and (max-width: breakpoints(lg)) {
-                        font-size: 16px;
-                        line-height: 18px;
-                        margin-bottom: 7px;
+                        font-size: 14px;
+                        line-height: 16px;
+                        margin-bottom: 5px;
                     }
                     a {
-                        font-size: 18px;
-                        font-weight: 600;
+                        font-size: 16px;
+                        line-height: 18px;
+                        font-weight: 400;
                         color: $white;
                         @media screen and (max-width: breakpoints(lg)) {
-                            font-size: 16px;
-                            line-height: 18px;
+                            font-size: 14px;
+                            line-height: 16px;
                         }
                     }
                 }
@@ -108,26 +117,25 @@ footer {
         .social__links {
             padding: 0 15px 0 0;
             .social__links__text {
+                font-size: 20px;
+                line-height: 22px;
                 font-weight: 600;
                 color: $morran-yellow;
-                margin-bottom: 20px;
+                margin-bottom: 15px;
                 @media screen and (max-width: breakpoints(lg)) {
                     margin-bottom: 10px;
                 }
             }
             .soc__links {
                 display: flex;
-                gap: 20px;
+                gap: 15px;
                 @media screen and (max-width: breakpoints(lg)) {
                     gap: 10px;
                 }
                 .social__media__link {
+                    font-size: 20px;
                     i {
-                        font-size: 30px;
                         color: $white;
-                        @media screen and (max-width: breakpoints(lg)) {
-                            font-size: 20px;
-                        }
                     }
                 }
             }
@@ -148,14 +156,16 @@ footer {
             @media screen and (max-width: breakpoints(lg)) {
                 margin-bottom: 5px;
             }
-            .privacy__policy {
-                color: $white;
-            }
+            .privacy__policy,
             .terms__and__conditions {
+                font-size: 14px;
+                line-height: 16px;
                 color: $white;
             }
         }
         .rights__reserved__text {
+            font-size: 14px;
+            line-height: 16px;
             color: $white;
         }
     }
