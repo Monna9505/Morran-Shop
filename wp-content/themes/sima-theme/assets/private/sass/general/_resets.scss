@@ -166,29 +166,25 @@ a {
 
 .main-button {
     cursor: pointer;
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 13px;
+    line-height: 20px;
     font-weight: 600;
+    text-transform: uppercase;
     border-radius: 5px;
+    background-color: $morran-yellow;
+    border-color: $morran-yellow;
+    color: $black;
     padding: 15px 25px;
+    @include smooth-transition;
+    &:hover {
+        background-color: $black;
+        color: $white;
+    }
     @media screen and (max-width: breakpoints(xl)) {
-        font-size: 14px;
-        line-height: 20px;
         padding: 10px 20px;
     }
     @media screen and (max-width: breakpoints(md)) {
         padding: 7px 14px;
-    }
-}
-
-.main-button {
-    background-color: $morran-yellow;
-    border-color: $morran-yellow;
-    color: $black;
-    @include smooth-transition;
-    &:hover {
-        background-color: $black;
-        border-color: $white;
     }
 }
 

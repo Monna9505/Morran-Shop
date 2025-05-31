@@ -2,7 +2,6 @@
     justify-content: center;
     gap: 30px;
     border-top: 1px solid $black;
-    padding: 30px 0;
     @media screen and (max-width: breakpoints(lg)) {
       display: none;
     }
@@ -12,13 +11,14 @@
       margin-top: 10px;
     }
     .main__link {
+      align-self: center;
         .main-menu-link {
-            font-size: 22px;
-            line-height: 27px;
+            font-size: 18px;
+            line-height: 20px;
             font-weight: 600;
             color: $white;
-            border-radius: 3px;
-            padding: 10px 20px;
+            border-radius: 2px;
+            padding: 7px 15px;
             @include smooth-transition;
             i {
               font-size: 15px;
@@ -54,8 +54,8 @@
                margin-bottom: 20px; 
                .sublink {
                 position: relative;
-                font-size: 22px;
-                line-height: 27px;
+                font-size: 18px;
+                line-height: 20px;
                 font-weight: 600;
                 @include smooth-transition;
                 &:before {

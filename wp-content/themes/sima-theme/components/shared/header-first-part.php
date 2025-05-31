@@ -5,13 +5,6 @@
 $header_logo = get_field('header_logo', 'option') ?: false;
 ?>
 <div class="header__first__part standard-grid">
-    <?php if (!empty($header_logo['url'])) { 
-        $alt = (isset($header_logo['alt']) && !empty($header_logo['alt'])) ? $header_logo['alt'] : 'Morran Studio Logo';
-        ?>
-        <a href="/" class="header__logo" title="Morran Studio Logo">
-            <img src="<?php echo $header_logo['url']; ?>" alt="<?php echo $alt; ?>" loading="lazy">
-        </a>
-    <?php } ?>
     <div class="search__favourites__cart standard-grid">
         <div class="dots__menu">
             <div class="first standard-grid">
@@ -31,9 +24,6 @@ $header_logo = get_field('header_logo', 'option') ?: false;
             </div>
         </div>
         <?php include(locate_template('components/shared/mobile-header.php')); ?>
-        <div class="desktop-searchbar">
-            <?php include(locate_template('components/shared/search-bar.php')); ?>
-        </div>
         <a href="<?php echo wc_get_cart_url(); ?>" class="cart" title="<?php _e( 'View your shopping cart' ); ?>">
             <span class="cart__icon">
                 <i class="fa-solid fa-cart-shopping"></i>

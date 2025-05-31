@@ -18,6 +18,29 @@ function orbis_cart_checkout_override () {
     return wc_get_page_permalink( 'checkout' );
 }
 
+// Save shoe size to cart item
+add_filter('woocommerce_add_cart_item_data', function($cart_item_data, $product_id) {
+    if (isset($_POST['shoe_size']) && !empty($_POST['shoe_size'])) {
+        $cart_item_data['shoe_size'] = sanitize_text_field($_POST['shoe_size']);
+    }
+    return $cart_item_data;
+}, 10, 2);
+
+// Save shoe size to order item meta
+add_action('woocommerce_add_order_item_meta', function($item_id, $values) {
+    if (isset($values['shoe_size'])) {
+        wc_add_order_item_meta($item_id, 'Shoe Size', $values['shoe_size']);
+    }
+}, 10, 2);
+
+// Show shoe size in order details and emails
+add_filter('woocommerce_order_item_display_meta_key', function($display_key, $meta, $item) {
+    if ($display_key === 'Shoe Size') {
+        $display_key = __('Shoe Size', 'sima-theme');
+    }
+    return $display_key;
+}, 10, 3);
+
 /* Avoid Empty Cart Redirect @ WooCommerce Checkout */
 add_filter( 'woocommerce_checkout_redirect_empty_cart', '__return_false' );
 add_filter( 'woocommerce_checkout_update_order_review_expired', '__return_false' );
@@ -76,7 +99,7 @@ function aptekan_checkout_fields( $fields ){
     $fields['billing']['billing_email']['priority'] = 3;
     $fields['billing']['billing_phone']['priority'] = 4;
 
-    $fields['billing']['billing_email']['placeholder'] = __( 'Вашият имейл', 'infraconcept' );
+    $fields['billing']['billing_email']['placeholder'] = __( 'Your email', 'sima-theme' );
 
     $fields['billing']['billing_email']['class'] = array('checkout-field');
     $fields['billing']['billing_phone']['class'] = array('checkout-field');
