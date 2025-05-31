@@ -55,7 +55,7 @@
                             @media screen and (max-width: breakpoints(lg)) {
                                 padding: 0 15px;
                             }
-                            @media screen and (max-width: breakpoints(md)) {
+                            @media screen and (max-width: breakpoints(lg)) {
                                 display: none;
                             }
                             .descr {
@@ -107,13 +107,16 @@
                         .slide__img {
                             flex-basis: calc(60% - 10px);
                             height: 100%;
-                            @media screen and (max-width: breakpoints(md)) {
+                            @media screen and (max-width: breakpoints(lg)) {
                                 flex-basis: 100%;
                             }
                             img {
                                 width: 100%;
                                 height: 100%;
-                                object-fit: cover;
+                                object-fit: contain;
+                                @media screen and (max-width: breakpoints(lg)) {
+                                    object-fit: cover;
+                                }
                             }
                         }
                     }
