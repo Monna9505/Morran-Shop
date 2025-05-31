@@ -60,8 +60,8 @@ $hero_image = (isset($module['hero_image'])) ? $module['hero_image'] : false;
         ?>
         <div class="hero__banner" <?php echo (isset($image) && !empty($image)) ? "style='background: url($image) no-repeat center'" : ''; ?>>
             <div class="hero__content-wrapper">
-                <div class="title__overlay"></div>
                 <div class="content">
+                    <div class="title__overlay"></div>
                     <?php if (isset($hero_image['hero_title']) && !empty($hero_image['hero_title'])) { ?>
                         <h1 class="hero__title"><?php echo $hero_image['hero_title']; ?></h1>
                     <?php } ?>
