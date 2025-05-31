@@ -1,7 +1,7 @@
 .single__product {
-    margin: 250px 0 70px 0;
+    margin: 130px 0 70px 0;
     @media screen and (max-width: breakpoints(lg)) {
-        margin: 120px 0 50px 0;
+        margin: 90px 0 50px 0;
     }
     .poduct__wrapper {
         flex-wrap: nowrap;
@@ -82,12 +82,15 @@
                     color: $morran-yellow;
                 }
             }
-            .product_color,
-            .product_size {
-                margin-bottom: 15px;
-                p {
-                    font-size: 18px;
-                    font-weight: 600;
+            form {
+                .shoe__size__select {
+                    justify-content: flex-start;
+                    gap: 10px;
+                    margin-bottom: 15px;
+                    .choose__size__text {
+                        text-transform: capitalize;
+                        font-size: 16px;
+                    }
                 }
             }
             .quantity-wrapper {
