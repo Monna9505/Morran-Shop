@@ -1,72 +1,83 @@
 .hero {
-    margin-top: 50px;
+    height: 370px;
+    background-color: $black;
+    margin: 0 0 70px 0;
     @media screen and (max-width: breakpoints(lg)) {
-        margin-top: 6px;
+        margin: 0 0 40px 0;
+    }
+    @media screen and (max-width: breakpoints(md)) {
+        height: 300px;
     }
     .hero__slider {
-        border-bottom: 2px solid $morran-yellow;
-        margin: 0 0 250px 0;
-        @media screen and (max-width: breakpoints(xl)) {
-            margin: 0 0 170px 0;
-        }
-        @media screen and (max-width: breakpoints(lg)) {
-            margin: 0 0 100px 0;
-        }
-        @media screen and (max-width: breakpoints(sm)) {
-            margin: 0 0 60px 0;
-        }
+        height: 100%;
         .prev-button,
         .next-button {
             position: absolute;
-            top: 50%;
+            top: 40%;
             box-shadow: 0px 0px 22px -5px rgba(0, 0, 0, 0.25);
+            padding: 8px 10px;
+            @media screen and (max-width: breakpoints(md)) {
+                padding: 5px 8px;
+            }
+            i {
+                font-size: 12px;
+                @media screen and (max-width: breakpoints(md)) {
+                    font-size: 10px;
+                }
+            }
         }
         .next-button {
-            right: 50px;
+            right: 40px;
             transform: translate(20px, 50%);
         }
         .prev-button {
+            left: -10px;
             transform: translate(30px, 50%);
         }
         .slick-list {
+            height: 100%;
             overflow: visible;
             .slick-track {
-                display: flex;
-                .slide {
-                    background: linear-gradient(360deg, rgba($morran-yellow, .8), rgba($white, 0) 50%);
-                    position: relative;
-                    height: 650px;
-                    padding-top: 40px;
-                    @media screen and (max-width: breakpoints(xl)) {
-                        height: 400px;
+                height: 100%;
+                .slick-slide {
+                    div {
+                        height: 100%;
                     }
+                }
+                .slide {
+                    position: relative;
+                    height: 100%;
                     .content {
-                        width: 85%;
-                        margin: 0 auto;
-                        @media screen and (max-width: breakpoints(xl)) {
-                            width: 100%;
-                        }
                         .slide__text {
-                            gap: 20px;
-                            padding: 0 30px;
-                            @media screen and (max-width: 991px) {
+                            position: relative;
+                            flex-basis: calc(40% - 10px);
+                            padding: 0 20px;
+                            @media screen and (max-width: breakpoints(lg)) {
                                 padding: 0 15px;
                             }
+                            @media screen and (max-width: breakpoints(md)) {
+                                display: none;
+                            }
                             .descr {
-                                flex-wrap: nowrap;
-                                gap: 20px;
-                                @media screen and (max-width: breakpoints(lg)) {
-                                    flex-direction: column;
-                                    gap: 0;
-                                }
+                                position: absolute;
+                                bottom: 50%;
+                                transform: translateY(50%);
+                                height: auto;
                                 .slide__title {
                                     width: 100%;
+                                    height: auto;
                                     text-align: center;
                                     align-self: center;
                                     text-transform: uppercase;
                                     h1 {
-                                        font-weight: 700;
+                                        font-size: 45px;
+                                        line-height: 48px;
+                                        font-weight: 300;
                                         color: $morran-yellow;
+                                        @media screen and (max-width: breakpoints(lg)) {
+                                            font-size: 30px;
+                                            line-height: 33px;
+                                        }
                                     }
                                 }
                                 .slide__description {
@@ -86,41 +97,23 @@
                                         line-height: 25px;
                                     }
                                 }
-                            }
-                            .slide__button {
-                                text-align: center;
-                                margin: 40px 0 50px 0;
-                                @media screen and (max-width: breakpoints(lg)) {
-                                    margin: 25px 0 20px 0;
+                                .slide__button {
+                                    height: auto;
+                                    text-align: center;
+                                    margin-top: 20px;
                                 }
                             }
                         }
                         .slide__img {
-                            position: absolute;
-                            left: 50%;
-                            transform: translateX(-50%);
-                            width: 95%;
-                            height: 600px;
-                            margin: 0 auto;
-                            @media screen and (max-width: breakpoints(xl)) {
-                                height: 400px;
-                            }
-                            @media screen and (max-width: breakpoints(lg)) {
-                                height: 300px;
-                            }
+                            flex-basis: calc(60% - 10px);
+                            height: 100%;
                             @media screen and (max-width: breakpoints(md)) {
-                                height: 250px;
-                            }
-                            @media screen and (max-width: breakpoints(sm)) {
-                                width: 90%;
-                                height: 190px;
+                                flex-basis: 100%;
                             }
                             img {
                                 width: 100%;
                                 height: 100%;
                                 object-fit: cover;
-                                border-radius: 10px;
-                                box-shadow: -10px 10px 10px 0 rgba(0, 0, 0, 0.30);
                             }
                         }
                     }

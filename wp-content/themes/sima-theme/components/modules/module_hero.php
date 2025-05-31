@@ -18,10 +18,10 @@ $hero_image = (isset($module['hero_image'])) ? $module['hero_image'] : false;
                     $has_text = (isset($slide['slide_title']) && !empty($slide['slide_title'])) || (isset($slide['slide_description']) && !empty($slide['slide_description']));
                     ?>
                     <div class="slide">
-                        <div class="content">
+                        <div class="content standard-grid">
                             <?php if ($has_text) { ?>
                                 <div class="slide__text">
-                                    <div class="descr standard-grid">
+                                    <div class="descr">
                                         <?php if (isset($slide['slide_title']) && !empty($slide['slide_title'])) { ?>
                                             <div class="slide__title">
                                                 <h1><?php echo $slide['slide_title']; ?></h1>
@@ -30,24 +30,25 @@ $hero_image = (isset($module['hero_image'])) ? $module['hero_image'] : false;
                                         <?php if (isset($slide['slide_description']) && !empty($slide['slide_description'])) { ?>
                                             <div class="slide__description"><?php echo $slide['slide_description']; ?></div>
                                         <?php } ?>
+                                        <?php if (isset($slide['slide_link']['url']) && !empty($slide['slide_link']['url'])) { 
+                                            $title = (isset($slide['slide_link']['title']) && !empty($slide['slide_link']['title'])) ? $slide['slide_link']['title'] : 'Morran Slide';
+                                            ?>
+                                            <div class="slide__button">
+                                                <a href="<?php echo $slide['slide_link']['url']; ?>" class="main-button" title="<?php echo $title; ?>">
+                                                    <?php echo $title; ?>
+                                                </a>
+                                            </div>
+                                        <?php } ?>
                                     </div>
-                                    <?php if (isset($slide['slide_link']['url']) && !empty($slide['slide_link']['url'])) { 
-                                        $title = (isset($slide['slide_link']['title']) && !empty($slide['slide_link']['title'])) ? $slide['slide_link']['title'] : 'Morran Slide';
-                                        ?>
-                                        <div class="slide__button">
-                                            <a href="<?php echo $slide['slide_link']['url']; ?>" class="main-button" title="<?php echo $title; ?>">
-                                                <?php echo $title; ?>
-                                            </a>
-                                        </div>
-                                    <?php } ?>
                                 </div>
                             <?php } ?>
                             <?php if (isset($slide['slide_image']['url']) && !empty($slide['slide_image']['url'])) { 
                                 $alt = (isset($slide['slide_image']['alt']) && !empty($slide['slide_image']['alt'])) ? $slide['slide_image']['alt'] : __('Slide Image', 'sima-theme');
+                                $link = (isset($slide['slide_link']['url']) && !empty($slide['slide_link']['url'])) ? $slide['slide_link']['url'] : '#';
                                 ?>
-                                <div class="slide__img">
+                                <a href="<?php echo $link; ?>" class="slide__img">
                                     <img src="<?php echo $slide['slide_image']['url']; ?>" alt="<?php echo $alt; ?>" loading="lazy">
-                                </div>
+                                </a>
                             <?php } ?>
                         </div>
                     </div>
