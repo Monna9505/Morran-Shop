@@ -15,18 +15,19 @@
             flex-direction: column;
         }
         .left__content {
-            flex-basis: calc(45% - 15px);
+            flex-basis: calc(40% - 15px);
+            height: 400px;
+            @media screen and (max-width: breakpoints(xl)) {
+                height: 330px;
+            }
+            @media screen and (max-width: breakpoints(sm)) {
+                height: 250px;
+            }
             @media screen and (max-width: breakpoints(md)) {
                 margin-bottom: 15px;
             }
             .new__arrival-hidden-img {
-                height: 500px;
-                @media screen and (max-width: breakpoints(lg)) {
-                    height: 350px;
-                }
-                @media screen and (max-width: breakpoints(sm)) {
-                    height: 300px;
-                }
+                height: 100%;
                 img {
                     width: 100%;
                     height: 100%;
@@ -36,12 +37,15 @@
             }
         }
         .right__content {
-            flex-basis: calc(55% - 15px);
+            flex-basis: calc(60% - 15px);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             .new__arrival-hidden-descr {
                 margin-bottom: 40px;
+                @media screen and (max-width: breakpoints(md)) {
+                    margin-bottom: 25px;
+                }
                 .new__arrival__title {
                     font-size: 25px;
                     line-height: 30px;
@@ -55,9 +59,9 @@
                 .new__arrival__descr {
                     margin-bottom: 20px;
                     p {
-                        line-height: 32px;
+                        line-height: 22px;
                         @media screen and (max-width: 1024px) {
-                            line-height: 20px;
+                            line-height: 18px;
                         }
                     }
                 }
@@ -71,14 +75,14 @@
                 }
                 .new__arrival-image {
                     flex-basis: calc(33.33% - 10px);
-                    height: 200px;
+                    height: 150px;
                     cursor: pointer;
-                    @media screen and (max-width: breakpoints(lg)) {
-                        height: 150px;
+                    @media screen and (max-width: breakpoints(xl)) {
+                        height: 100px;
                     }
                     @media screen and (max-width: breakpoints(md)){
                         flex-basis: calc(33.33% - 3px);
-                        height: 100px;
+                        height: 150px;
                     }
                     @media screen and (max-width: breakpoints(sm)){
                         height: 100px;
