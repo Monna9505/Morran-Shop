@@ -1,5 +1,6 @@
 .container {
     max-width: 1650px;
+    height: 100%;
     margin: 0 auto;
     padding: 0 30px;
     @media screen and (max-width: breakpoints(lg)) {
@@ -37,7 +38,7 @@ input:focus {
 }
 
 h1,h2,h3,h4,h5,h6 {
-    font-weight: 500;
+    font-weight: 400;
     margin: 0;
 }
 
@@ -120,6 +121,9 @@ p, span, li, input::placeholder {
     line-height: 22px;
     font-weight: 400;
     @media screen and (max-width: breakpoints(xl)) {
+        font-size: 16px;
+    }
+    @media screen and (max-width: breakpoints(md)) {
         font-size: 14px;
     }
 }
@@ -168,7 +172,7 @@ a {
     cursor: pointer;
     font-size: 13px;
     line-height: 20px;
-    font-weight: 600;
+    font-weight: 400;
     text-transform: uppercase;
     border-radius: 5px;
     background-color: $morran-yellow;

@@ -29,10 +29,23 @@ footer {
                     margin-bottom: 5px;
                 }
                 a {
+                    position: relative;
                     font-size: 16px;
                     line-height: 18px;
                     font-weight: 400;
                     color: $white;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        bottom: -2px;
+                        width: 0;
+                        height: 1px;
+                        background-color: $morran-yellow;
+                        @include smooth-transition;
+                    }
+                    &:hover::before {
+                        width: 100%;
+                    }
                     @media screen and (max-width: breakpoints(lg)) {
                         font-size: 14px;
                         line-height: 16px;
@@ -61,10 +74,23 @@ footer {
                         margin-bottom: 5px;
                     }
                     a {
+                        position: relative;
                         font-size: 16px;
                         line-height: 18px;
                         font-weight: 400;
                         color: $white;
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            bottom: -2px;
+                            width: 0;
+                            height: 1px;
+                            background-color: $morran-yellow;
+                            @include smooth-transition;
+                        }
+                        &:hover::before {
+                            width: 100%;
+                        }
                         @media screen and (max-width: breakpoints(lg)) {
                             font-size: 14px;
                             line-height: 16px;
@@ -102,10 +128,23 @@ footer {
                         margin-bottom: 5px;
                     }
                     a {
+                        position: relative;
                         font-size: 16px;
                         line-height: 18px;
                         font-weight: 400;
                         color: $white;
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            bottom: -2px;
+                            width: 0;
+                            height: 1px;
+                            background-color: $morran-yellow;
+                            @include smooth-transition;
+                        }
+                        &:hover::before {
+                            width: 100%;
+                        }
                         @media screen and (max-width: breakpoints(lg)) {
                             font-size: 14px;
                             line-height: 16px;
