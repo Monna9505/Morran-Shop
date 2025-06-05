@@ -28,6 +28,15 @@ $(document).ready(function() {
         }
     });
 
+    // Making header sticky
+    $(window).on('scroll', function () {
+        if ($(window).scrollTop() >= 200) {
+            $('header').addClass('sticky__header');
+        } else {
+            $('header').removeClass('sticky__header');
+        }
+    });
+
     if ($(window).width() > 991) {
         // Show/hide languages on hover
         $('.lang__dropdown').hide();

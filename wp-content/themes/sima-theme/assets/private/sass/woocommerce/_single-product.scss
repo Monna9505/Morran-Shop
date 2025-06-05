@@ -1,23 +1,27 @@
 .single__product {
-    margin: 130px 0 70px 0;
+    margin: 50px 0 70px 0;
     @media screen and (max-width: breakpoints(lg)) {
-        margin: 90px 0 50px 0;
+        margin: 50px 0;
     }
     .poduct__wrapper {
         flex-wrap: nowrap;
         gap: 10px;
         margin-bottom: 100px;
-        @media screen and (max-width: breakpoints(lg)) {
+        @media screen and (max-width: breakpoints(md)) {
             flex-direction: column;
+            margin-bottom: 50px;
         }
         .product__images {
             width: 50%;
             @media screen and (max-width: breakpoints(lg)) {
+                width: calc(60% - 15px);
+            }
+            @media screen and (max-width: breakpoints(md)) {
                 width: 100%;
             }
             .product__main__image {
                 display: block;
-                height: 500px;
+                height: 400px;
                 margin-bottom: 30px;
                 @media screen and (max-width: 575px) {
                     height: 280px;
@@ -62,8 +66,10 @@
         .product__content {
             width: 45%;
             @media screen and (max-width: breakpoints(lg)) {
+                width: calc(40% - 15px);
+            }
+            @media screen and (max-width: breakpoints(md)) {
                 width: 100%;
-                margin-top: 30px;
             }
             .product__title {
                 margin-bottom: 20px;
@@ -117,68 +123,71 @@
                         padding: 10px 0;
                     }
                 }
+                button {
+                    border: none;
+                }
             }
         }
     }
     .related__products__wrapper {
-        .related {
-            h2 {
-                text-align: center;
-                margin-bottom: 40px;
-                @media screen and (max-width: breakpoints(lg)) {
-                    margin-bottom: 20px;
-                }
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            @media screen and (max-width: breakpoints(lg)) {
+                margin-bottom: 20px;
             }
-            ul.products {
-                display: flex;
-                justify-content: center;
-                gap: 20px;
+        }
+        ul.products {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            @media screen and (max-width: breakpoints(lg)) {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            @media screen and (max-width: breakpoints(sm)) {
+                flex-direction: column;
+            }
+            li.product {
+                width: 33%;
+                margin: 0;
                 @media screen and (max-width: breakpoints(lg)) {
-                    flex-wrap: wrap;
-                    gap: 10px;
+                    width: calc(50% - 10px);
+                    margin-bottom: 30px;
                 }
                 @media screen and (max-width: breakpoints(sm)) {
-                    flex-direction: column;
+                    width: 100%;
                 }
-                li.product {
-                    width: 33%;
-                    margin: 0;
+                &:last-child {
                     @media screen and (max-width: breakpoints(lg)) {
-                        width: calc(50% - 10px);
-                        margin-bottom: 30px;
+                        margin-bottom: 0px;
                     }
-                    @media screen and (max-width: breakpoints(sm)) {
-                        width: 100%;
+                }
+                a {
+                    img {
+                        height: 250px;
+                        object-fit: cover;
+                        border-radius: 10px;
                     }
-                    a {
-                        img {
-                            height: 300px;
-                            object-fit: cover;
-                            border-radius: 10px;
-                        }
-                        .woocommerce-loop-product__title {
-                            font-size: 20px;
-                            line-height: 24px;
-                            text-align: left;
-                        }
-                        .price {
-                            .woocommerce-Price-amount {
-                                .bdi {
-                                    color: $morran-yellow !important;
-                                }
-                            }
-                        }
+                    .woocommerce-loop-product__title {
+                        font-size: 20px;
+                        line-height: 24px;
+                        text-align: left;
                     }
-                    .add_to_cart_button,
-                    a.button.product_type_simple {
-                        text-transform: uppercase;
-                        color: $black;
-                        background-color: $morran-yellow;
-                        @include smooth-transition;
-                        &:hover {
-                            color: $white;
-                            background-color: $black;
-                        }
+                    .price {
+                        color: $morran-yellow !important;
+                    }
+                }
+                .add_to_cart_button,
+                a.button {
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    color: $black;
+                    background-color: $morran-yellow;
+                    @include smooth-transition;
+                    &:hover {
+                        color: $white;
+                        background-color: $black;
                     }
                 }
             }

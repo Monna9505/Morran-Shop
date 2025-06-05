@@ -1,7 +1,12 @@
 header {
     position: relative;
+    top: 0;
     box-shadow: 4px 0px 15px 0px rgba(0, 0, 0, 0.25);
     z-index: 999;
+    transition: all 0.3s ease-in-out;
+    &.sticky__header {
+        position: sticky;
+    }
     .header__wrapper {
         background-color: $black;
         padding: 15px 0;
