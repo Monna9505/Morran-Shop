@@ -10,8 +10,32 @@ $product_content = $product->get_description();
 $product_image = wp_get_attachment_image_src(get_post_thumbnail_id($product_id), 'single-post-thumbnail') ?: false;
 $gallery_images = $product->get_gallery_image_ids() ?: false;
 $add_to_cart_url = wc_get_checkout_url() . '?add-to-cart=' . $product_id;
-$product_color = $product->get_attribute('pa_color');
-$product_size = $product->get_attribute('pa_size');
+
+$attributes = $product->get_attributes();
+if (isset($attributes['pa_shoe-size'])) {
+    $attr_shoe_size_terms = get_terms([
+        'taxonomy' => 'pa_shoe-size',
+        'hide_empty' => false,
+    ]);
+}
+
+$us_shoe_sizes = [];
+$uk_shoe_sizes = [];
+$eu_shoe_sizes = [];
+
+foreach ($attr_shoe_size_terms as $term) {
+    if (strpos($term->name, 'US') !== false) {
+        $us_shoe_sizes[] = $term;
+    } elseif (strpos($term->name, 'UK') !== false) {
+        $uk_shoe_sizes[] = $term;
+    } elseif (strpos($term->name, 'EU') !== false) {
+        $eu_shoe_sizes[] = $term;
+    }
+}
+
+$all_shoe_sizes['us'] = $us_shoe_sizes;
+$all_shoe_sizes['uk'] = $uk_shoe_sizes;
+$all_shoe_sizes['eu'] = $eu_shoe_sizes;
 
 include(locate_template('components/shared/header.php'));
 ?>
@@ -47,32 +71,55 @@ include(locate_template('components/shared/header.php'));
                         <p><?php echo __('Price', 'sima-theme') . ': ' . $product->price . ' ' . get_woocommerce_currency_symbol(); ?></p>
                     </div>
                 <?php } ?>
-                <?php if (!empty($product_color)) { ?>
-                    <div class="product_color">
-                        <p><?php echo __('Color: ' . $product_color, 'sima-theme'); ?></p>
+                <form class="cart" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="add-to-cart" value="<?php echo esc_attr($product_id); ?>">
+                    <?php if (!empty($all_shoe_sizes) && !is_wp_error($all_shoe_sizes)) { ?>
+                        <div class="shoe__size__select standard-grid">
+                            <?php foreach ($all_shoe_sizes as $key=>$current) { ?>
+                                <?php if ($key == 'us') { ?>
+                                    <div class="us">
+                                        <p class="initial_shoe_text"><?php echo __('Select <span>US</span> size', 'sima-theme'); ?></p>
+                                        <ul class="sizes">
+                                            <?php foreach ($current as $us_size) { ?>
+                                                <li><?php echo $us_size->name; ?></li>
+                                            <?php } ?>
+                                        </ul>
+                                    </div>
+                                <?php } else if ($key == 'uk') { ?>
+                                    <div class="uk">
+                                        <p class="initial_shoe_text"><?php echo __('Select <span>UK</span> size', 'sima-theme'); ?></p>
+                                        <ul class="sizes">
+                                            <?php foreach ($current as $uk_size) { ?>
+                                                <li><?php echo $uk_size->name; ?></li>
+                                            <?php } ?>
+                                        </ul>
+                                    </div>
+                                <?php } else { ?>
+                                    <div class="eu">
+                                        <p class="initial_shoe_text"><?php echo __('Select <span>EU</span> size', 'sima-theme'); ?></p>
+                                        <ul class="sizes">
+                                            <?php foreach ($current as $eu_size) { ?>
+                                                <li><?php echo $eu_size->name; ?></li>
+                                            <?php } ?>
+                                        </ul>
+                                    </div>
+                                <?php } ?>
+                            <?php } ?>
+                        </div>
+                    <?php } ?>
+                    <div class="quantity-wrapper">
+                        <button type="button" class="minus">-</button>
+                        <?php
+                            woocommerce_quantity_input([
+                                'min_value'   => apply_filters('woocommerce_quantity_input_min', 1, $product),
+                                'max_value'   => apply_filters('woocommerce_quantity_input_max', $product->get_max_purchase_quantity(), $product),
+                                'input_value' => isset($_POST['quantity']) ? wc_stock_amount($_POST['quantity']) : 1,
+                            ]);
+                        ?>
+                        <button type="button" class="plus">+</button>
                     </div>
-                <?php } ?>
-                <?php if (!empty($product_size)) { ?>
-                    <div class="product_size">
-                        <p><?php echo __('Size: ' . $product_size, 'sima-theme'); ?></p>
-                    </div>
-                <?php } ?>
-                <div class="quantity-wrapper">
-                    <button type="button" class="minus">-</button>
-                    <?php
-                        woocommerce_quantity_input([
-                            'min_value'   => apply_filters('woocommerce_quantity_input_min', 1, $product),
-                            'max_value'   => apply_filters('woocommerce_quantity_input_max', $product->get_max_purchase_quantity(), $product),
-                            'input_value' => isset($_POST['quantity']) ? wc_stock_amount($_POST['quantity']) : 1, // default value
-                        ]);
-                    ?>
-                    <button type="button" class="plus">+</button>
-                </div>
-                <div class="add_to_cart">
-                    <a href="<?php echo esc_url($add_to_cart_url); ?>" class="main-button">
-                        <?php echo esc_html(__('Add to Offer', 'sima-theme')); ?>
-                    </a>
-                </div>
+                    <button type="submit" class="main-button"><?php echo esc_html(__('Add to Offer', 'sima-theme')); ?></button>
+                </form>
             </div>
         </div>
         <?php if (function_exists('woocommerce_output_related_products')) { ?>

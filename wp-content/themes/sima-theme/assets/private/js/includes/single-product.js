@@ -27,4 +27,12 @@ $(document).ready(function() {
             ]
         });
     }, 0);
+
+    //Show shoe size dropdown on click
+    if ($('.initial_shoe_text').length > 0) {
+        $('.initial_shoe_text').on('click', function() {
+            $('.initial_shoe_text').siblings('.sizes').removeClass('opened_dropdown').slideUp();
+            $(this).siblings('.sizes').addClass('opened_dropdown').slideDown();
+        });
+    }
 });
