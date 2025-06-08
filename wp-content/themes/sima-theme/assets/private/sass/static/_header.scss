@@ -16,7 +16,6 @@ header {
         .header__logo {
             align-self: center;
             max-width: 120px;
-            border-radius: 3px;
             @media screen and (max-width: breakpoints(lg)) {
                 max-width: 90px;
             }
