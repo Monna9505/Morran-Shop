@@ -174,14 +174,13 @@ a {
     line-height: 20px;
     font-weight: 400;
     text-transform: uppercase;
-    border-radius: 5px;
-    background-color: $morran-yellow;
-    border-color: $morran-yellow;
-    color: $black;
+    background-color: $black;
+    border-color: $black;
+    color: $white;
     padding: 15px 25px;
     @include smooth-transition;
     &:hover {
-        background-color: $black;
+        background-color: $morran-yellow;
         color: $white;
     }
     @media screen and (max-width: breakpoints(xl)) {

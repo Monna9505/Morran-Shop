@@ -4,6 +4,7 @@
         margin: 50px 0;
     }
     .shop__categories {
+        justify-content: center;
         flex-wrap: nowrap;
         gap: 10px;
         text-align: center;
@@ -19,6 +20,7 @@
             background-color: unset;
             i {
                 font-size: 25px;
+                color: $morran-yellow;
             }
         }
         .next-cat {
@@ -28,38 +30,31 @@
             }
         }
         a {
-            flex-basis: calc(20% - 20px);
+            flex-basis: 12%;
             text-align: -webkit-center;
             background-color: $white;
-            border-radius: 10px;
             padding: 25px 0;
             @media screen and (max-width: breakpoints(lg)) {
                 width: 95% !important;
                 padding: 15px 0;
             }
             .cat_image {
-                width: 65px;
-                margin-bottom: 25px;
-                @media screen and (max-width: breakpoints(lg)) {
-                    width: 35px;
-                    margin-bottom: 15px;
-                }
+                width: 25px;
+                margin-bottom: 10px;
                 img {
                     width: 100%;
                 }
             }
             .cat_name {
-                font-size: 22px;
-                font-weight: 600;
+                font-size: 16px;
+                font-weight: 500;
                 text-transform: uppercase;
                 @media screen and (max-width: breakpoints(lg)) {
-                    font-size: 18px;
+                    font-size: 14px;
                 }
             }
             &.cat_all {
                 align-content: center;
-                background-color: rgba($morran-light-yellow, 0.3);
-                border: 1px solid $morran-yellow;
             }
             &.active_cat {
                 background-color: $black;
@@ -75,7 +70,7 @@
                 flex-wrap: nowrap;
                 justify-content: normal;
                 width: 48%;
-                gap: 15px;
+                gap: 30px;
                 margin-bottom: 30px;
                 @media screen and (max-width: 1075px) {
                     width: 100%;
@@ -85,6 +80,7 @@
                     height: 100%;
                     flex-direction: column;
                     justify-content: normal;
+                    gap: 15px;
                 }
                 .product__image {
                     width: 370px;
@@ -96,37 +92,42 @@
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
-                        border-radius: 10px;
                     }
                 }
                 .product__content {
-                    height: 100%;
                     width: 50%;
-                    background-color: $white;
-                    border-radius: 10px;
-                    padding: 20px 10px 20px 30px;
+                    height: 100%;
+                    padding: 20px 0;
                     @media screen and (max-width: 1075px) {
                         width: 60%;
                     }
                     @media screen and (max-width: breakpoints(sm)) {
                         width: 100%;
                         height: unset;
-                        padding: 30px 10px 40px 20px;
+                        padding: 0;
                     }
                     .product__title {
-                        font-size: 28px;
-                        line-height: 32px;
-                        margin-bottom: 15px;
+                        font-size: 22px;
+                        line-height: 25px;
+                        margin-bottom: 10px;
+                        @media screen and (max-width: breakpoints(sm)) {
+                            margin-bottom: 0;
+                        }
+                    }
+                    .descr {
+                        p {
+                            font-weight: 300;
+                        }
                     }
                     .product__price {
                         margin-top: 10px;
                     }
                     .view__product__button {
-                        margin-top: 30px;
+                        margin-top: 20px;
                         a {
-                            font-size: 14px;
-                            line-height: 17px;
-                            padding: 10px 15px;
+                            font-size: 12px;
+                            line-height: 14px;
+                            padding: 8px 12px;
                             @include smooth-transition;
                             &:hover {
                                 background-color: $black;

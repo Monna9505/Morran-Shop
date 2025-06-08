@@ -26,9 +26,6 @@
         @media screen and (max-width: breakpoints(md)) {
             margin-top: 20px;
         }
-        @media screen and (max-width: breakpoints(sm)) {
-            border-radius: 10px;
-        }
         .service {
             flex-grow: 1;
             flex-basis: calc(50% - 15px);
@@ -74,6 +71,7 @@
                     }
                     .service__descr {
                         line-height: 20px;
+                        font-weight: 300;
                     }
                     &.no-link {
                         cursor: auto;

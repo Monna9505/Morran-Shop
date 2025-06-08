@@ -74,7 +74,7 @@ $shop_query = new WP_Query($product_args);
                                 <h3 class="product__title"><?php the_title(); ?></h3>
                                 <?php if (!empty($product_short_descr)) { ?>
                                     <div class="descr">
-                                        <?php echo $product_short_descr; ?>
+                                        <p><?php echo $product_short_descr; ?></p>
                                     </div>
                                 <?php } ?>
                                 <p class="product__price">
