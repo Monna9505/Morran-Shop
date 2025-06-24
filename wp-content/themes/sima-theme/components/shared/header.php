@@ -13,6 +13,22 @@
     ?>
 </head>
 <body <?php body_class(); ?>>
+    <?php if (is_front_page()) { ?>
+        <div class="animation__element__content">
+            <div class="wrapper">
+                <?php if (!empty($header_logo['url'])) { 
+                    $alt = (isset($header_logo['alt']) && !empty($header_logo['alt'])) ? $header_logo['alt'] : 'Morran Studio Logo';
+                    ?>
+                    <a href="/" class="header__logo" title="Morran Studio Logo">
+                        <img src="<?php echo $header_logo['url']; ?>" alt="<?php echo $alt; ?>" loading="lazy">
+                    </a>
+                <?php } ?>
+                <div class="content__animation">
+                    <p><?php echo __('Discover your style redefined.', 'sima-theme'); ?></p>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
     <header>
         <div class="header__wrapper">
             <div class="container standard-grid">
