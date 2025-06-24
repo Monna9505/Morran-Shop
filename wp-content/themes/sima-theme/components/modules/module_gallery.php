@@ -12,15 +12,18 @@ $main_title = (isset($module['main_title'])) ? $module['main_title'] : false;
         <?php } ?>
         <?php if (!empty($morran_gallery) && is_array($morran_gallery)) { ?>
             <div class="gallery">
-                <?php foreach ($morran_gallery as $gallery_item) { 
+                <?php foreach ($morran_gallery as $index=>$gallery_item) { 
                     $alt = (isset($gallery_item['gallery_image']['alt']) && !empty($gallery_item['gallery_image']['alt'])) ? $gallery_item['gallery_image']['alt'] : 'Morran Gallery Image'; 
                     ?>
                     <?php if (isset($gallery_item['gallery_image']['url']) && !empty($gallery_item['gallery_image']['url'])) { ?>
-                        <div class="gallery__image">
+                        <a href="<?php echo $gallery_item['gallery_image']['url']; ?>" class="gallery__image" data-lightbox="image-gallery" style="<?php echo $index < 6 ? 'display:block;' : 'display:none;'; ?>">
                             <img src="<?php echo $gallery_item['gallery_image']['url']; ?>" alt="<?php echo $alt; ?>" loading="lazy">
-                        </div>
+                        </a>
                     <?php } ?>
                 <?php } ?>
+            </div>
+            <div class="load__imgs">
+                <p id="load-more-btn" class="main-button"><?php echo __('Load More', 'sima-theme'); ?></p>
             </div>
         <?php } ?>
     </div>

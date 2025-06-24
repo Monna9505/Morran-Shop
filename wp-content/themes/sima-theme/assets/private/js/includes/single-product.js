@@ -28,11 +28,27 @@ $(document).ready(function() {
         });
     }, 0);
 
-    //Show shoe size dropdown on click
-    if ($('.initial_shoe_text').length > 0) {
+    jQuery(document).ready(function($) {
+        // Toggle the dropdown when the shoe size text is clicked
         $('.initial_shoe_text').on('click', function() {
-            $('.initial_shoe_text').siblings('.sizes').removeClass('opened_dropdown').slideUp();
-            $(this).siblings('.sizes').addClass('opened_dropdown').slideDown();
+            // Find the associated dropdown and toggle it
+            $(this).siblings('.sizes').slideToggle();
         });
-    }
+    
+        // Handle size selection
+        $('.sizes li').on('click', function() {
+            // Highlight the selected size
+            $(this).siblings().removeClass('selected');
+            $(this).addClass('selected');
+            
+            // Get the selected size
+            let selectedSize = $(this).data('size');
+    
+            // Optionally set the selected size in a hidden input
+            $('.selected-shoe-size').val(selectedSize);
+    
+            // Optionally close the dropdown after selection
+            $(this).closest('.sizes').slideUp();
+        });
+    });    
 });

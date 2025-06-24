@@ -5,11 +5,17 @@
 
 if (!isset($module)) { return; }
 
+$zig_zag_title = (isset($module['zig_zag_title'])) ? $module['zig_zag_title'] : false;
 $image_description_repeater = (isset($module['image_description_repeater'])) ? $module['image_description_repeater'] : false;
 ?>
 
 <?php if (!empty($image_description_repeater) && is_array($image_description_repeater)) { ?>
     <div class="zig__zag__img__txt">
+        <?php if (!empty($zig_zag_title )) { ?>
+            <h2 class="zig__zag__title">
+                <?php echo $zig_zag_title; ?>
+            </h2>
+        <?php } ?>
         <?php foreach ($image_description_repeater as $item) { ?>
             <div class="block standard-grid <?php echo (isset($item['right_or_left']) && !empty($item['right_or_left'])) ? $item['right_or_left'] : ""; ?>">
                 <?php if (isset($item['image']['url']) && !empty($item['image']['url'])) { ?>
@@ -20,9 +26,9 @@ $image_description_repeater = (isset($module['image_description_repeater'])) ? $
                 <?php } ?>
                 <div class="block__content">
                     <?php if (isset($item['title']) && !empty($item['title'])) { ?>
-                        <h2 class="block__title">
+                        <h3 class="block__title">
                             <?php echo $item['title']; ?>
-                        </h2>
+                        </h3>
                     <?php } ?>
                     <?php if (isset($item['description']) && !empty($item['description'])) { ?>
                         <div class="block__description">

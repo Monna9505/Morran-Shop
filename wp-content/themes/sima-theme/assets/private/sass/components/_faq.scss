@@ -15,7 +15,8 @@
             position: relative;
             left: 0;
             background-color: $white;
-            border-left: 25px solid $morran-orange;
+            border: 1px solid $morran-yellow;
+            border-left: 25px solid $morran-yellow;
             padding: 20px 40px;
             margin-bottom: 30px;
             @include smooth-transition;
@@ -36,8 +37,8 @@
                 }
                 i {
                     font-size: 18px;
-                    color: $morran-orange;
-                    border: 1px solid $morran-orange;
+                    color: $morran-yellow;
+                    border: 1px solid $morran-yellow;
                     border-radius: 50%;
                     padding: 8px 10px;
                     @media screen and (max-width: breakpoints(lg)) {

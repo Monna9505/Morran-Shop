@@ -33,7 +33,9 @@
             flex-basis: 12%;
             text-align: -webkit-center;
             background-color: $white;
+            border: 0.5px solid $black;
             padding: 25px 0;
+            @include smooth-transition;
             @media screen and (max-width: breakpoints(lg)) {
                 width: 95% !important;
                 padding: 15px 0;
@@ -51,6 +53,12 @@
                 text-transform: uppercase;
                 @media screen and (max-width: breakpoints(lg)) {
                     font-size: 14px;
+                }
+            }
+            &:hover {
+                background-color: $black;
+                .cat_name {
+                    color: $white;
                 }
             }
             &.cat_all {

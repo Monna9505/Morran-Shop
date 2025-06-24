@@ -6,6 +6,13 @@
     @media screen and (max-width: breakpoints(sm)) {
         padding: 0 15px;
     }
+    .zig__zag__title {
+        text-align: center;
+        margin-bottom: 40px;
+        @media screen and (max-width: breakpoints(lg)) {
+            margin-bottom: 20px;
+        }
+    }
     .block {
         position: relative;
         justify-content: flex-start;
@@ -13,7 +20,8 @@
         margin-bottom: 50px;
         &.right {
             flex-direction: row-reverse;
-            .block__title {
+            .block__title,
+            .block__description {
                 text-align: right;
             }
         }
@@ -37,11 +45,13 @@
             }
             .block__title {
                 font-size: 28px;
-                line-height: 32px;
+                line-height: 30px;
                 margin-bottom: 20px;
+                @media screen and (max-width: breakpoints(lg)) {
+                    font-size: 25px;
+                    line-height: 27px;
+                }
                 @media screen and (max-width: breakpoints(md)) {
-                    font-size: 22px;
-                    line-height: 25px;
                     margin-bottom: 10px;
                 }
             }

@@ -101,6 +101,9 @@
                                     height: auto;
                                     text-align: center;
                                     margin-top: 20px;
+                                    a {
+                                        border: 1px solid $morran-yellow;
+                                    }
                                 }
                             }
                         }
