@@ -13,21 +13,22 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: fadeOut 5s forwards;
-  animation-delay: 3s;
+  animation: fadeOut 4s forwards;
+  animation-delay: 4s;
   background-color: $black;
   z-index: 9999;
   .wrapper {
     position: absolute;
-    bottom: -40%;
+    bottom: -30%;
     width: 100%;
     height: 100%;
     text-align: center;
     color: $white;
   }
   .header__logo {
+    animation: showContent 3s ease-in-out forwards;
     img {
-      width: 300px;
+      width: 350px;
       margin-bottom: 30px;
       @media screen and (max-width: breakpoints(md)) {
         width: 250px;
@@ -36,6 +37,9 @@ html, body {
     }
   }
   .content__animation {
+    width: 70%;
+    animation: showContent 3s ease-in-out forwards;
+    margin: 0 auto;
     p {
       font-size: 40px;
       line-height: 45px;
@@ -45,6 +49,15 @@ html, body {
       }
     }
   }
+}
+
+@keyframes showContent {
+    0% {
+      transform: scale(0.5);
+    }
+    100% {
+      transform: scale(1);
+    }
 }
 
 @keyframes fadeOut {

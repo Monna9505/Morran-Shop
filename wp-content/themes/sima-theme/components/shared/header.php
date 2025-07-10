@@ -22,10 +22,10 @@
                     <a href="/" class="header__logo" title="Morran Studio Logo">
                         <img src="<?php echo $header_logo['url']; ?>" alt="<?php echo $alt; ?>" loading="lazy">
                     </a>
+                    <div class="content__animation">
+                        <p><?php echo __('Welcome to Morran Studio, the kingdom of handmade products', 'sima-theme'); ?></p>
+                    </div>
                 <?php } ?>
-                <div class="content__animation">
-                    <p><?php echo __('Discover your style redefined.', 'sima-theme'); ?></p>
-                </div>
             </div>
         </div>
     <?php } ?>

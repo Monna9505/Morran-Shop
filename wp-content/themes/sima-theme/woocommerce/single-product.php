@@ -11,34 +11,6 @@ $product_image = wp_get_attachment_image_src(get_post_thumbnail_id($product_id),
 $gallery_images = $product->get_gallery_image_ids() ?: false;
 $add_to_cart_url = wc_get_checkout_url() . '?add-to-cart=' . $product_id;
 
-$attributes = $product->get_attributes();
-$attr_shoe_size_terms = [];
-
-if (isset($attributes['pa_shoe-size'])) {
-    $attr_shoe_size_terms = get_terms([
-        'taxonomy' => 'pa_shoe-size',
-        'hide_empty' => false,
-    ]);
-}
-
-$us_shoe_sizes = [];
-$uk_shoe_sizes = [];
-$eu_shoe_sizes = [];
-
-foreach ($attr_shoe_size_terms as $term) {
-    if (strpos($term->name, 'US') !== false) {
-        $us_shoe_sizes[] = $term;
-    } elseif (strpos($term->name, 'UK') !== false) {
-        $uk_shoe_sizes[] = $term;
-    } elseif (strpos($term->name, 'EU') !== false) {
-        $eu_shoe_sizes[] = $term;
-    }
-}
-
-$all_shoe_sizes['us'] = $us_shoe_sizes;
-$all_shoe_sizes['uk'] = $uk_shoe_sizes;
-$all_shoe_sizes['eu'] = $eu_shoe_sizes;
-
 include(locate_template('components/shared/header.php'));
 ?>
 <div class="single__product">
@@ -75,42 +47,6 @@ include(locate_template('components/shared/header.php'));
                 <?php } ?>
                 <form class="cart" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="add-to-cart" value="<?php echo esc_attr($product_id); ?>">
-                    <?php if (has_term('shoes', 'product_cat', $product_id)) { 
-                        if (!empty($all_shoe_sizes) && !is_wp_error($all_shoe_sizes)) { ?>
-                            <div class="shoe__size__select standard-grid">
-                                <?php foreach ($all_shoe_sizes as $key => $current) { ?>
-                                    <?php if ($key == 'us') { ?>
-                                        <div class="us">
-                                            <p class="initial_shoe_text"><?php echo __('Select <span>US</span> size', 'sima-theme'); ?></p>
-                                            <ul class="sizes">
-                                                <?php foreach ($current as $us_size) { ?>
-                                                    <li><?php echo $us_size->name; ?></li>
-                                                <?php } ?>
-                                            </ul>
-                                        </div>
-                                    <?php } elseif ($key == 'uk') { ?>
-                                        <div class="uk">
-                                            <p class="initial_shoe_text"><?php echo __('Select <span>UK</span> size', 'sima-theme'); ?></p>
-                                            <ul class="sizes">
-                                                <?php foreach ($current as $uk_size) { ?>
-                                                    <li><?php echo $uk_size->name; ?></li>
-                                                <?php } ?>
-                                            </ul>
-                                        </div>
-                                    <?php } else { ?>
-                                        <div class="eu">
-                                            <p class="initial_shoe_text"><?php echo __('Select <span>EU</span> size', 'sima-theme'); ?></p>
-                                            <ul class="sizes">
-                                                <?php foreach ($current as $eu_size) { ?>
-                                                    <li><?php echo $eu_size->name; ?></li>
-                                                <?php } ?>
-                                            </ul>
-                                        </div>
-                                    <?php } ?>
-                                <?php } ?>
-                            </div>
-                        <?php }
-                    } ?>
                     <div class="quantity-wrapper">
                         <button type="button" class="minus">-</button>
                         <?php
