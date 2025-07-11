@@ -28,7 +28,7 @@ html, body {
   .header__logo {
     animation: showContent 3s ease-in-out forwards;
     img {
-      width: 350px;
+      width: 450px;
       margin-bottom: 30px;
       @media screen and (max-width: breakpoints(md)) {
         width: 250px;
@@ -43,6 +43,7 @@ html, body {
     p {
       font-size: 40px;
       line-height: 45px;
+      color: $morran_yellow;
       @media screen and (max-width: breakpoints(md)) {
         font-size: 25px;
         line-height: 28px;

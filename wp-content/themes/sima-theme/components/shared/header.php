@@ -23,7 +23,7 @@
                         <img src="<?php echo $header_logo['url']; ?>" alt="<?php echo $alt; ?>" loading="lazy">
                     </a>
                     <div class="content__animation">
-                        <p><?php echo __('Welcome to Morran Studio, the kingdom of handmade products', 'sima-theme'); ?></p>
+                        <p><?php echo __('Welcome to Morran Studio, the kingdom of handmade', 'sima-theme'); ?></p>
                     </div>
                 <?php } ?>
             </div>

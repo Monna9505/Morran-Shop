@@ -20,4 +20,5 @@ jQuery(function($) {
     //=include includes/woo-checkout.js
     //=include includes/gallery-infinate-scroll.js
     //=include includes/animated-text.js
+    //=include includes/zig-zag-text-show.js
 });

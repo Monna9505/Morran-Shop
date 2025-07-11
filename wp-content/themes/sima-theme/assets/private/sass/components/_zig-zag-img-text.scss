@@ -26,6 +26,7 @@
             }
         }
         .block__img {
+            position: relative;
             flex-basis: calc(45% - 20px);
             height: 400px;
             @media screen and (max-width: breakpoints(sm)) {
@@ -36,12 +37,26 @@
                 height: 100%;
                 object-fit: cover;
             }
+            .read__more {
+                display: none;
+                z-index: 2;
+                @media screen and (max-width: breakpoints(sm)) {
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    display: block;
+                    text-align: center;
+                    background-color: rgba($white,0.5);
+                    padding: 20px;
+                }
+            }
         }
         .block__content {
             flex-basis: calc(50% - 20px);
             align-content: center;
             @media screen and (max-width: breakpoints(sm)) {
                 position: absolute;
+                height: 100%;
             }
             .block__title {
                 font-size: 28px;
@@ -54,10 +69,42 @@
                 @media screen and (max-width: breakpoints(md)) {
                     margin-bottom: 10px;
                 }
+                @media screen and (max-width: breakpoints(sm)) {
+                     font-weight: 300;
+                     text-align: center;
+                     background-color: rgba($black, 0.8);
+                     color: $white;
+                     margin: 0 auto;
+                     padding: 35px 20px;
+                }
             }
             .block__description {
+                @media screen and (max-width: breakpoints(sm)) {
+                    position: absolute;
+                    top: 0;
+                    align-content: center;
+                    display: none;
+                    height: 85%;
+                    overflow-y: auto;
+                    text-align: left;
+                    background-color: $black;
+                    padding: 30px 20px;
+                }
+                &::-webkit-scrollbar {
+                    width: 5px;
+                }
+                &::-webkit-scrollbar-track {
+                    background-color: $black;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background-color: $morran-yellow;
+                    border-radius: 0;
+                }
                 p {
                     font-weight: 300;
+                    @media screen and (max-width: breakpoints(sm)) {
+                        color: $white;
+                    }
                 }
             }
         }

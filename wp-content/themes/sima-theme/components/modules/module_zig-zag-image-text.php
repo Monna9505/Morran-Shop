@@ -22,6 +22,9 @@ $image_description_repeater = (isset($module['image_description_repeater'])) ? $
                     <div class="block__img">
                         <img src="<?php echo $item['image']['url']; ?>" 
                              alt="<?php echo $item['image']['alt']; ?>">
+                             <div class="read__more">
+                                <a class="main-button" href="#"><?php echo __('Read More', 'sima-theme'); ?></a>
+                             </div>
                     </div>
                 <?php } ?>
                 <div class="block__content">

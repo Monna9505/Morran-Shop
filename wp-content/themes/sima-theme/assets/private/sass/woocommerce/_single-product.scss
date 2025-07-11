@@ -151,65 +151,67 @@
         }
     }
     .related__products__wrapper {
-        h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            @media screen and (max-width: breakpoints(lg)) {
-                margin-bottom: 20px;
-            }
-        }
-        ul.products {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            @media screen and (max-width: breakpoints(lg)) {
-                flex-wrap: wrap;
-                gap: 10px;
-            }
-            @media screen and (max-width: breakpoints(sm)) {
-                flex-direction: column;
-            }
-            li.product {
-                width: 33%;
-                margin: 0;
+        .related {
+            h2 {
+                text-align: center;
+                margin-bottom: 40px;
                 @media screen and (max-width: breakpoints(lg)) {
-                    width: calc(50% - 10px);
-                    margin-bottom: 30px;
+                    margin-bottom: 20px;
+                }
+            }
+            ul.products[class*=columns-] {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                @media screen and (max-width: breakpoints(lg)) {
+                    flex-wrap: wrap;
+                    gap: 10px;
                 }
                 @media screen and (max-width: breakpoints(sm)) {
-                    width: 100%;
+                    flex-direction: column;
                 }
-                &:last-child {
+                li.product {
+                    width: 33%;
+                    margin: 0;
                     @media screen and (max-width: breakpoints(lg)) {
-                        margin-bottom: 0px;
+                        width: calc(50% - 10px);
+                        margin-bottom: 30px;
                     }
-                }
-                a {
-                    img {
-                        height: 250px;
-                        object-fit: cover;
+                    @media screen and (max-width: breakpoints(sm)) {
+                        width: 100%;
                     }
-                    .woocommerce-loop-product__title {
-                        font-size: 20px;
-                        line-height: 24px;
-                        text-align: left;
+                    &:last-child {
+                        @media screen and (max-width: breakpoints(lg)) {
+                            margin-bottom: 0px;
+                        }
                     }
-                    .price {
-                        color: $morran-yellow !important;
+                    a {
+                        img {
+                            height: 250px;
+                            object-fit: cover;
+                        }
+                        .woocommerce-loop-product__title {
+                            font-size: 20px;
+                            line-height: 24px;
+                            text-align: left;
+                        }
+                        .price {
+                            color: $morran-yellow !important;
+                        }
                     }
-                }
-                .add_to_cart_button,
-                a.button {
-                    font-size: 13px;
-                    font-weight: 400;
-                    text-transform: uppercase;
-                    color: $white;
-                    background-color: $black;
-                    border-radius: 0;
-                    @include smooth-transition;
-                    &:hover {
+                    .add_to_cart_button,
+                    a.button {
+                        font-size: 13px;
+                        font-weight: 400;
+                        text-transform: uppercase;
                         color: $white;
-                        background-color: $morran-yellow;
+                        background-color: $black;
+                        border-radius: 0;
+                        @include smooth-transition;
+                        &:hover {
+                            color: $white;
+                            background-color: $morran-yellow;
+                        }
                     }
                 }
             }
